@@ -1,0 +1,30 @@
+.grid {
+    width: 100%;
+    /*đặt display block để class grid chứa 100% độ rộng của thẻ */
+    /*đặt display block để kế thừa thẻ chứa nó,
+    và để phòng các thẻ k có thuộc tính block thì nó vẫn chứa 100% độ rộng*/
+    display: block;
+    /*reset padding về 0 để k ảnh hưởng tới kích thước sau này */
+    padding: 0;
+}
+
+.grid.wide {
+    /*để chiều rộng cố định của class wide là 1200px*/
+    max-width: 1200px;
+    /*căn lề trên dưới 0px, trái phải để auto*/
+    margin: 0 auto
+}
+
+/*Tablet - PC độ phân giải thấp*/
+@media (min-width: 740px) and (max-width: 1023px) {
+    .wide {
+        width: 644px;
+    }
+}
+
+/*PC độ phân giải thấp*/
+@media (min-width: 1024px) and (max-width: 1239px) {
+    .wide {
+        width: 984px;
+    }
+}

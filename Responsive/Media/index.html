@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        /*đổi nội dung thẻ h1 thành màu đỏ*/
+        /*khi in ra thì nội dung thẻ h2 sẽ là màu xanh dương*/
+        @media only print {
+            h2 {
+                color: blue;
+            }
+        }
+
+        @media screen and (max-width: 1024px ) {
+            h1 {
+                color: blue;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            h1 {
+                color: green;
+            }
+        }
+
+        /*min-width: màn hình có kích cỡ lớn hơn 1024px thì thẻ h1 sẽ chuyển màu xanh
+        min-width: number; màn hình kích cỡ lớn hơn hoặc bằng giá trị number thì sẽ áp dụng css.
+        max-width: number; màn hình kích thước nhỏ hơn hoặc bằng giá trị number thì sẽ áp dụng css.
+        */
+
+    </style>
+    <link rel="stylesheet" media="(max-width: 720px)" href="style1.css">
+</head>
+<body>
+<h1>This is a text</h1>
+<h2>this text is small</h2>
+<p>Dế Mèn phiêu lưu ký là tác phẩm văn xuôi đặc sắc và nổi tiếng nhất của nhà văn Tô Hoài viết về loài vật, dành cho lứa
+    tuổi thiếu nhi. Ban đầu truyện có tên là "Con dế mèn" (chính là ba chương đầu của truyện) do Nhà xuất bản Tân Dân,
+    Hà Nội phát hành năm 1941. Sau đó, được sự ủng hộ nhiệt tình của nhân dân, Tô Hoài viết thêm truyện "Dế Mèn phiêu
+    lưu ký" (là bảy chương cuối của truyện). Năm 1955, ông mới gộp hai chuyện vào với nhau để thành truyện "Dế mèn phiêu
+    lưu ký" như ngày nay. Truyện đã được đưa vào chương trình học lớp 6 học kỳ 2 môn Ngữ Văn của Việt Nam.</p>
+<!--
+@media not|only mediatype and (mediafeature and|or|not mediafeature){
+CSS code
+}
+@media là cú pháp, khi sử dụng trong file CSS đều bắt đầu bằng @media
+1.keyword:
+ - not: loại trừ; Vd: not A: là loại trừ A
+ - only: chỉ áp dụng cho đối tượng dược gọi
+ - and: và
+ - or: hoặc
+2.mediatype:
+ - print: css cho chế độ in
+ - screen: css cho chế độ màn hình( điện thoại, máy tính..)
+ - speech: màn hình nói được (dùng cho người khuyết tật)
+ - all
+3. media features: là những value để lựa chọn ra những trường hợp cụ thể để CSS
+ - min-width:
+ - max-width:
+ ... chi tiết lên w3chool coi các tham số của media feature
+4. Polyfill:
+ - sử dụng @media cho các trình duyệt cũ
+
+-->
+</body>
+</html>

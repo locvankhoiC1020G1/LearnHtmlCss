@@ -1,0 +1,117 @@
+.header {
+    width: 100%;
+    height: 50px;
+    background: aqua;
+}
+
+.header_list_pc {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*mobile nav*/
+.nav_bars-btn {
+    width: 32px;
+    height: 32px;
+    display: none;
+}
+
+/*thanh nav mobile xuất hiện ở bên trái*/
+.nav__mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 100%;
+    background-color: aliceblue;
+    /*Vì thanh nav sẽ trượt ra từ bên trái
+    nên ta cho thuộc tính transform: translateX(-100%);
+    để ẩn toàn nav về phía bên trái(k hiển thị)
+    */
+    transform: translateX(-100%);
+    /*thời gian trượt ra trượt vào*/
+    transition: transform linear 0.2s, opacity linear 0.2s;
+}
+
+.nav__mobile-list {
+    margin-top: 24px;
+}
+
+.nav__mobile-link {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px 0px;
+    font-size: 1.4rem;
+}
+
+/* css cho nút X đóng navbar,
+ vì dùng file svg nên ta phải dùng width, height để hiển thị
+ vì thẻ chứa nó đã có postition fixed nên ta để nút đóng này
+ position absolute top, right để nó xuất hiện bên phải của
+ navbar
+ */
+.nav__mobile--close {
+    color: red;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 28px;
+    height: 28px;
+}
+
+/*Hiển thị lớp phủ lên màn hình, đặt các giá trị = 0 để phủ toàn bộ màn hình*/
+.nav__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /*thuộc tính rgba 0.4 là độ opacity-trong suốt(làm mờ) của thẻ*/
+    background-color: rgba(0, 0, 0, 0.4);
+    /*ẩn đi khi ở màn hình pc, chi hiển thị khi click ở màn mobile*/
+    display: none;
+    animation: fadeIn linear 0.9s;
+}
+
+/*dùng display:none để ẩn ô input; hoặc có thể dùng attribute hidden để ẩn*/
+.nav__input {
+    display: none;
+}
+
+/*sử dụng lớp giả:checked để hiển thị ra nav__mobile
+khi ta click vào nav__input
+*/
+.nav__input:checked ~ .nav__mobile {
+    transform: translateX(0%);
+}
+
+/*hiển thị nav__overlay với lớp giả:checked*/
+.nav__input:checked ~ .nav__overlay {
+    display: block;
+}
+
+@media only screen and (max-width: 1023px) {
+    .header {
+        display: none;
+    }
+
+    .nav_bars-btn {
+        display: block;
+        margin-left: 8px;
+    }
+}
+
+/*tạo 1 keyframe có điểm bắt đầu opacity = 0,
+ và điểm kết thúc opacity = 1*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

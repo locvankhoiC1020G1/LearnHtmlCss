@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My project</title>
+    <style>
+        .mobile,
+        .tablet,
+        .pc {
+            font-size: 100px;
+            font-weight: bolder;
+            margin: auto;
+            color: red;
+            display: none;
+        }
+
+        /*phải có  <meta name="viewport" content="width=device-width, initial-scale=1.0"> trên header*/
+        /*mobile: chiều rộng( width < 740px)*/
+        @media only screen and (max-width: 739px) {
+            .mobile {
+                display: block;
+            }
+        }
+
+        /*tablet: chiều rộng(width >= 740px and width <= 1024px)*/
+        @media only screen and (min-width: 740px) and (max-width: 1023px) {
+            .tablet {
+                display: block;
+            }
+        }
+
+        /*pc: chiều rộng (width >= 1024px)*/
+        @media only screen and (min-width: 1024px) {
+            .pc {
+                display: block;
+            }
+        }
+
+        /*độ ưu tiên css: chạy từ trên xuống dưới, thuộc tính css gọi sau sẽ được hiển thị*/
+    </style>
+</head>
+<body>
+<div>
+    <h2 class="pc">PC</h2>
+    <h2 class="tablet">Tablet</h2>
+    <h2 class="mobile">Mobile</h2>
+</div>
+<!--BreakPoint là những điểm, vị trí mà website sẽ thay đổi- thích ứng bố cục trang web-->
+</body>
+</html>
