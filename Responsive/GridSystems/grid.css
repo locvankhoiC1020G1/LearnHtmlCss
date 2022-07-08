@@ -15,6 +15,26 @@
     margin: 0 auto
 }
 
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -4px;
+    margin-right: -4px;
+}
+
+.col {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.c-0 {
+    display: none;
+}
+
+.c-1 {
+    flex: 0 0 8.3333%;
+}
+
 /*Tablet - PC độ phân giải thấp*/
 @media (min-width: 740px) and (max-width: 1023px) {
     .wide {

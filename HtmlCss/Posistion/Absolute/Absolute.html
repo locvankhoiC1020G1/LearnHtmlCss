@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 100%;
+            height: 400px;
+            background-color: green;
+            position: relative;
+        }
+
+        .box-child {
+            width: 80px;
+            height: 80px;
+            background-color: red;
+            position: absolute;
+            /*đặt vị trí của thẻ con bên trong thẻ cha*/
+            left: 10%;
+            top: 20%;
+        }
+
+        .box-parent {
+            position: absolute;
+            background-color: yellow;
+            /*Muốn thẻ bên trong có chiều rộng
+          gần bằng thẻ cha thì ta cho thêm các thuộc tính
+          top, left,right,bottom bên dưới
+          */
+            top: 20px;
+            left: 40px;
+            bottom: 30px;
+            right: 20px;
+        }
+
+        html, body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="box-parent">
+<!-- Thẻ con phụ thuộc vào thẻ có thuộc tính position gần nhất-->
+        <div class="box-child"></div>
+    </div>
+</div>
+<!--- Absolute: phụ thuộc vào thẻ cha gần nhất
+         có thuộc tính position làm gốc tọa độ-->
+</body>
+</html>
