@@ -70,11 +70,9 @@
     right: 0;
     bottom: 0;
     left: 0;
-    /*thuộc tính rgba 0.4 là độ opacity-trong suốt(làm mờ) của thẻ*/
     background-color: rgba(0, 0, 0, 0.4);
-    /*ẩn đi khi ở màn hình pc, chi hiển thị khi click ở màn mobile*/
     display: none;
-    animation: fadeIn linear 0.9s;
+    /*animation: fadeIn linear 0.9s;*/
 }
 
 /*dùng display:none để ẩn ô input; hoặc có thể dùng attribute hidden để ẩn*/
