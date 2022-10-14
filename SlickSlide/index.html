@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <style>
+        .smallnav {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .smallnav img {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div><img alt="slide" src="https://via.placeholder.com/600/808080/808080?Text=1Slideimg"></div>
+    <div><img alt="slide" src="https://via.placeholder.com/600/0000FF/808080?Text=2Slideimg"></div>
+    <div><img alt="slide" src="https://via.placeholder.com/600/ccc/808080?Text=3Slideimg"></div>
+</div>
+
+<div class="smallnav">
+    <div><img alt="slide" src="https://via.placeholder.com/50/999/808080?Text=Slideimg" data-index="0"></div>
+    <div><img alt="slide" src="https://via.placeholder.com/50/999/808080?Text=Slideimg" data-index="1"></div>
+    <div><img alt="slide" src="https://via.placeholder.com/50/999/808080?Text=Slideimg" data-index="2"></div>
+</div>
+<script>
+    jQuery(document).ready(function ($) {
+        $('.container').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true,
+            arrows: false,
+            speed: 1,
+            touchMove: false,
+            responsive: [{
+                breakpoint: 769,
+                settings: {
+                    arrows: false,
+                    dots: true,
+                    touchMove: true
+                }
+            }]
+        });
+        $(document).on("click", ".smallnav img", function () {
+            var di = $(this).data("index");
+            $('.container').slick('slickGoTo', di);
+        });
+    });
+</script>
+</body>
+</html>

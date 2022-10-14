@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        .notshow {
+            display: none;
+        }
+
+        .catlist {
+            list-style: none;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="data">
+    <div class="main">
+        <div class="title">
+            <div class="shownow">
+                <h4>Show It</h4>
+            </div>
+        </div>
+        <div class="notshow">
+            <ul class="catlist">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        <div class="title">
+            <div class="shownow">
+                <h4>Show It</h4>
+            </div>
+        </div>
+        <div class="notshow">
+            <ul class="catlist">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        <div class="title">
+            <div class="shownow">
+                <h4>Show It</h4>
+            </div>
+        </div>
+        <div class="notshow">
+            <ul class="catlist">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $('body').on('click', '.shownow', function () {
+        $('.notshow').removeClass('nohide');
+        $(this).closest('.main').find('.notshow').addClass('nohide').toggle();
+        $('.notshow').each(function () {
+            if (!$(this).hasClass('nohide')) {
+                $(this).hide();
+            }
+        });
+
+    });
+</script>
+</body>
+</html>

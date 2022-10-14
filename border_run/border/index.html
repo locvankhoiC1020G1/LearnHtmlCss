@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1 {
+            color: #666;
+            display:inline-block;
+            margin:0;
+            text-transform:uppercase;
+        }
+        h1:after {
+            display:block;
+            content: '';
+            border: solid 3px #92a8d1;
+            transform: scaleX(0);
+            transition: transform 800ms ease-in-out;
+        }
+        h1:hover:after {
+            transform: scaleX(1);
+        }
+    </style>
+</head>
+<body>
+<h1 class="fromCenter">Hover Over Me</h1><br/>
+<h1 class="fromCenter">Hover Over Me</h1><br/>
+</body>
+</html>
