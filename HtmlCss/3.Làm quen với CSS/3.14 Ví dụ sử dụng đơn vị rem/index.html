@@ -1,0 +1,31 @@
+<!--
+hi bạn CSS cho một thẻ là font-size: 1rem,
+ thì giá trị 1rem này sẽ phụ thuộc vào giá trị font-size được đặt cho thẻ html,
+  mặc định tại trình duyệt thì font-size: 16px, vì vậy mặc định font-size: 1rem sẽ bằng 16px, 2rem sẽ bằng 32px.
+Khi các bạn đặt font-size với giá trị khác cho thẻ html thì giá trị của rem cũng sẽ thay đổi theo tương tự.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Đơn vị rem</title>
+    <meta charset="UTF-8"/>
+    <style>
+        html {
+            font-size: 20px;
+        }
+
+        .text-1 {
+            font-size: 1rem;
+        }
+
+        .text-2 {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+<p class="text-1">Đoạn văn này font-size là 1rem, khi bạn thay đổi
+    font-size cho thẻ html thì giá trị ở đây thay đổi theo.</p>
+<p class="text-2">Đoạn văn này có font-size 2rem
+    vì vậy sẽ lớn gấp 2 lần đoạn văn ở trên.</p>
+</body>
+</html>

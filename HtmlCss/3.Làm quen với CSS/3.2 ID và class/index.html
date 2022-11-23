@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        /* Chọn tất cả thẻ "p" là con của thẻ có class "parent" */
+        .parent p {
+            color: green;
+        }
+
+        /* Chọn tất cả thẻ có class "children-1" là con của thẻ có class "parent" */
+        .parent .children-1 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<!--css selector là cách để gọi tới các element để có thể css-->
+<!--id (identify) Trong cùng 1 page HTML, mỗi ID cần là duy nhất.
+ Đây là nguyên tắc của việc sử dụng ID,
+  nếu vi phạm sẽ gặp cảnh báo trong tab Console của dev tool,
+   và Javascript sẽ không lấy ra được cả 2 phần tử có dùng ID
+-->
+<h1 id="first-tag">Css với ID</h1>
+<!--class dùng để css cho nhiều thẻ
+ Một thẻ có thể có nhiều class, mỗi class cách nhau bằng 1 khoảng trắng (dấu space).
+ -->
+<h1 class="second-tag font-big">dùng class</h1>
+<h1 class="second-tag"> class</h1>
+<h1 class="second-tag"> có nhiều thẻ</h1>
+
+<p class="children-1">Đoạn văn 1 (không parent)</p>
+<p class="children-2">Đoạn văn 2 (không parent)</p>
+
+<div class="parent">
+    <p>Đoạn văn 1 (parent 1)</p>
+    <p class="children-1">Đoạn văn 1 (con của .parent)</p>
+    <p class="children-2">Đoạn văn 2 (con của .parent)</p>
+</div>
+
+</body>
+</html>

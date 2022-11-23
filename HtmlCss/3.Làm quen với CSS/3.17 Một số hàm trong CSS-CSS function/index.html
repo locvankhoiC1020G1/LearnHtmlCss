@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* sử dụng comment hoặc bỏ comment để xem thay đổi*/
+
+        .box {
+            width: 100%;
+            height: 200px;
+            background-color: rgb(23, 221, 32);
+        }
+
+        .box-rgba {
+            height: 200px;
+            /*thay đổi giá trị anpha, tham số thứ 4 để thấy sự thay đổi*/
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .big-box {
+            /*width: calc(80% + 20px);*/
+            width: calc(100% - 390px);
+            /*width: calc(20% * 2);*/
+            /*width: calc( 30% / 2);*/
+            height: 200px;
+            background-color: #168dff;
+        }
+
+        /*ví dụ về attr()*/
+        a::after {
+            /*content là nội dung bên trong thẻ a*/
+            content: "(" attr(href) ")";
+        }
+
+        .box-attr::after {
+            background-color: #666666;
+            content: attr(data-index);
+        }
+    </style>
+</head>
+<body>
+<!--Một số hàm thường dùng trong CSS
+var() dùng để đặt biến. Xem lại 3.7
+linear-gradient()
+rgba(1,2,3,5) tạo ra màu có trong suốt. 5 là tỉ lệ trong suốt của màu
+Hàm rgb khác rbga ở chỗ không có tham số alpha, k thể tạo ra màu trong suốt
+rgb() tạo ra màu đặc, k nhìn qua được, rgb(1,2,3) trong đó  1,2,3 là các tham số
+max tham số truyền là số 255
+calc() sử dụng để cộng giá trị tương đối với tuyệt đối
+attr() thường sử dụng với lớp giả
+-->
+<p>RGB</p>
+<div class="box"></div>
+<p>RGBA</p>
+<div class="box-rgba">Trong suốt</div>
+<p>CALC</p>
+<div class="big-box"></div>
+<p>attr()</p>
+<a href="https://fullstack.edu.vn">Học lập trình</a>
+<div class="box-attr" data-index="this is a box">
+
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+/*Thuộc tính width, height với đơn vị % sẽ phụ thuộc vào kích thước width, height của thẻ mà nó phụ thuộc,
+ mặc định là thẻ cha trực tiếp.
+  Ví dụ: Thẻ cha có width 100px, thẻ con có width: 50% sẽ tương ứng với 50px.
+
+Trong ví dụ này, các bạn sẽ thấy các class box nằm trong thẻ body,
+ mặc định thẻ body sẽ có width bằng kích thước cửa sổ trình duyệt.
+  Vì vậy, box có width: 50% sẽ bằng 50% chiều ngang trình duyệt.
+
+Vài chương tới, các bạn sẽ được làm quen với thuộc tính position trong CSS,
+ thuộc tính này có thể làm thay đổi thẻ phụ thuộc.
+  Khi ấy, một thẻ được đặt width: 50% có thể sẽ không phụ thuộc vào thẻ cha trực tiếp của nó nữa.*/
+/* sử dụng đơn vị % */
+.box {
+    height: 50px;
+}
+
+.box1 {
+    width: 25%;
+    background-color: green;
+}
+
+.box2 {
+    width: 50%;
+    background-color: violet;
+}
+
+.box3 {
+    width: 75%;
+    background-color: brown;
+}
+
+.box4 {
+    width: 100%;
+    background-color: orange;
+}

@@ -23,23 +23,30 @@
     <div><img alt="slide" src="https://via.placeholder.com/600/808080/808080?Text=1Slideimg"></div>
     <div><img alt="slide" src="https://via.placeholder.com/600/0000FF/808080?Text=2Slideimg"></div>
     <div><img alt="slide" src="https://via.placeholder.com/600/ccc/808080?Text=3Slideimg"></div>
+    <div><img alt="slide" src="https://via.placeholder.com/600/ccc/808080?Text=3Slideimg"></div>
+    <div><img alt="slide" src="https://via.placeholder.com/600/ccc/808080?Text=3Slideimg"></div>
+    <div><img alt="slide" src="https://via.placeholder.com/600/ccc/808080?Text=3Slideimg"></div>
 </div>
 
 <div class="smallnav">
     <div><img alt="slide" src="https://via.placeholder.com/50/999/808080?Text=Slideimg" data-index="0"></div>
     <div><img alt="slide" src="https://via.placeholder.com/50/999/808080?Text=Slideimg" data-index="1"></div>
     <div><img alt="slide" src="https://via.placeholder.com/50/999/808080?Text=Slideimg" data-index="2"></div>
+    <div><img alt="slide" src="https://via.placeholder.com/50/999/808080?Text=Slideimg" data-index="4"></div>
+    <div><img alt="slide" src="https://via.placeholder.com/50/999/808080?Text=Slideimg" data-index="5"></div>
 </div>
 <script>
     jQuery(document).ready(function ($) {
         $('.container').slick({
-            slidesToShow: 1,
+            slidesToShow: 3,
             slidesToScroll: 1,
             infinite: true,
             dots: true,
             arrows: false,
-            speed: 1,
+            speed: 3,
             touchMove: false,
+            autoplay: true,
+            autoplaySpeed: 2000,
             responsive: [{
                 breakpoint: 769,
                 settings: {

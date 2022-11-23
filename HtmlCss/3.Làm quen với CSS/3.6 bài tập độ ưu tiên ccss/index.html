@@ -1,0 +1,24 @@
+<!--Cho trước thẻ tiêu đề được CSS màu đỏ,-->
+<!--hãy vận dụng kiến thức đã học về độ ưu tiên trong CSS để ghi đè cho thẻ tiêu đề thành màu #333;-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+/*<!--     ghi đè css   -->*/
+        h1#heading.title-group {
+            color: #333;
+        }
+
+        h1#heading {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1 id="heading" class="title-group">
+    Học như thế nào là phù hợp?
+</h1>
+</body>
+</html>

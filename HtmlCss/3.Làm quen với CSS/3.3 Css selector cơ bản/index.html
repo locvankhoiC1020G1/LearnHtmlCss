@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* Chọn tất cả thẻ "p" là con của thẻ có class "parent" */
+        .parent p {
+            color: green;
+        }
+
+        /* Chọn tất cả thẻ có class "children-1" là con của thẻ có class "parent" */
+        .parent .children-1 {
+            color: red;
+        }
+        div >
+    </style>
+</head>
+<body>
+
+<p class="children-1">Đoạn văn 1 (không parent)</p>
+<p class="children-2">Đoạn văn 2 (không parent)</p>
+
+<div class="parent">
+    <p>Đoạn văn 1 (parent 1)</p>
+    <p class="children-1">Đoạn văn 1 (con của .parent)</p>
+    <p class="children-2">Đoạn văn 2 (con của .parent)</p>
+</div>
+<!--.class	.intro	Chọn tất cả các thẻ có class=“intro”-->
+<!--.class1.class2	.name1.name2	Chọn tất cả các thẻ có cả name1 và name2 được đặt trong thuộc tính class của nó-->
+<!--.class1 .class2	.name1 .name2	Chọn tất cả các thẻ có class=“name2” là con của một phần tử có class=“name1”-->
+<!--*	*	Chọn tất cả các thẻ-->
+<!--element	h2	Chọn tất cả các thẻ h2-->
+<!--element.class	div.box	Chọn tất cả thẻ div có class=“box”-->
+<!--element, element	div, h2	Chọn tất cả thẻ div và h2-->
+<!--element element	div p	Chọn tất cả thẻ p trong thẻ div-->
+<!--element > element	div > p	Chọn tất cả thẻ p là con trực tiếp của thẻ div-->
+<!--element + element	div + p	Chọn thẻ p đứng liền kề sau thẻ div-->
+
+<div>
+    <p>Tô Hoài </p>
+    <p>Dế mèn phiêu lưu ký</p>
+</div>
+<!--element ~ element	div ~ p	Chọn tất cả thẻ p đứng sau thẻ div-->
+<!--Xem thêm tại-->
+
+<!--https://www.w3schools.com/cssref/css_selectors.php-->
+</body>
+</html>

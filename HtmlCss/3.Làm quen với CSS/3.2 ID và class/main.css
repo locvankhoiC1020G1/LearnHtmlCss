@@ -1,0 +1,13 @@
+/*khi css cho id thì dùng # trước tên id để css*/
+#first-tag {
+    color: red;
+}
+
+/* dùng . trước class để css*/
+.second-tag {
+    color: #4c9e9e;
+}
+
+.font-big {
+    font-size: 40px;
+}

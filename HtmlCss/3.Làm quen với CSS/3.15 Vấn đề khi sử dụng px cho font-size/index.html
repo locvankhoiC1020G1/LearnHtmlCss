@@ -1,0 +1,61 @@
+<!--Vấn đề khi sử dụng px cho font-size-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* Giả sử bạn làm cho khách hàng 1 website tin tức, ban đầu khách hàng đồng ý với kích cỡ font chữ hiện tại.
+
+         Nhưng sau đó, khách hàng nhận thấy kích cỡ font chữ hơi nhỏ và muốn tăng tất cả font-size to lên một chút.
+👉 Khi sử dụng px, bạn sẽ phải đi sửa từng class và id*/
+        #heading {
+            font-size: 20px;
+        }
+
+        .sub-heading {
+            font-size: 16px;
+        }
+
+        .text, ol li {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<h1 id="heading">Tại sao nên thêm rel="noopener" khi sử dụng target="_blank"?</h1>
+
+<p class="text">
+    Như chúng ta đã biết, sử dụng target="_blank" cho thẻ a
+    thì khi người dùng click vào liên kết trình duyệt sẽ mở trên một tab mới,
+    thường là do liên kết trong thẻ a dẫn tới một website khác
+    và chúng ta không muốn người dùng rời khỏi website của mình.
+</p>
+
+<h2 class="sub-heading">Vấn đề là gì?</h2>
+<p class="text">Với cách làm trên có 2 vấn đề về bảo mật và hiệu suất:</p>
+
+<ol>
+    <li>Tại trang đích có thể sử dụng window.opener
+        để kiểm soát được cửa sổ trang gốc của chúng ta,
+        ví dụ chạy window.opener.location.href = 'https://fullstack.edu.vn/'
+        là có thể chuyển hướng cửa sổ gốc tới https://fullstack.edu.vn/.
+        Hãy tưởng tượng bạn bị chuyển tới một URL có nội dung “độc hại”
+        như 18+ (khi ngồi cạnh người yêu),
+        hay các trang giả mạo để đánh cắp tài khoản ngân hàng, thông tin cá nhân, v.v…
+    </li>
+    <li>Trang đích chạy cùng tiến trình xử lý Javascript với trang gốc,
+        nếu trang đích sử dụng nhiều logic “nặng”
+        hoặc tối ưu chưa tốt về mặt hiệu năng
+        có thể làm ảnh hưởng tới trang web của bạn đang được mở tại cửa sổ gốc.
+    </li>
+</ol>
+
+<h2 class="sub-heading">Khắc phục thế nào?</h2>
+<p class="text">Để khắc phục vấn đề trên, bạn hãy thêm rel="noopener"
+    vào toàn bộ các thẻ a có target="_blank" nhé.</p>
+<p class="text">Tham khảo: <a rel="noopener" href="https://web.dev/external-anchors-use-rel-noopener" target="_blank">
+    https://web.dev/external-anchors-use-rel-noopener</a>
+</p>
+</body>
+</html>

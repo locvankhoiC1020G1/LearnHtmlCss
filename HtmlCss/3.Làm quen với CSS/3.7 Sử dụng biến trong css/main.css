@@ -1,0 +1,20 @@
+/*đặt biến: đặt trong :root và -- trước tên biến*/
+:root {
+    /*global variable: biến toàn cục này sử dụng ở mọi nơi*/
+    --main-color: red;
+}
+
+/*cách sử dụng biến*/
+h1 {
+    /*local variable */
+    --main-color: green;
+    color: var(--main-color);
+}
+
+h2 {
+    color: var(--main-color);
+}
+
+h3 {
+    color: var(--main-color);
+}

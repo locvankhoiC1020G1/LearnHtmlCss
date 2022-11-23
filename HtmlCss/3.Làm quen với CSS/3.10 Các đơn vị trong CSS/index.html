@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 20px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        /*khi định nghĩa kích thước = 30px thì kích cỡ h1 sẽ k thay đổi
+        và có kích cỡ đúng 30px
+        */
+        h1 {
+            font-size: 60px;
+        }
+
+        /*vì box2 được đặt trong thẻ body,
+        body kế thừa kích thước màn hình nên sẽ có độ rộng(width 50%)*/
+        .box2 {
+            width: 50%;
+            height: 100px;
+            background-color: #303030;
+        }
+
+        h3 {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+<!-- dùng để hiển thị kích cỡ các thành phần trong trang web-->
+<!--Có 2 loại unit ( đơn vị)-->
+<h2>1. Absolute unit:</h2>
+<!--1. Absolute unit: đơn vị tuyệt đối
+px: pixel(điểm ảnh trên màn hình).
+ Với màn độ phân giải thấp tương ứng với 1 px trên màn hình
+ màn phân giải cao tương ứng với nhiều px trên màn hình.
+ độ phân giải càng cao thì css chiếm càng nhiều px
+pt
+cm
+mm
+inch
+pc
+-->
+<!--VD về pixel-->
+<p>px</p>
+<div class="box">
+</div>
+<h2>
+    2 Relative unit
+</h2>
+<!--2 Relative unit: đơn vị tương đối: thay đổi kích thước khi đối tượng phụ thuộc thay đổi
+% phụ thuộc vào thẻ chứa nó
+rem phụ thuộc vào thuộc tính font-size thẻ html
+em
+vw: viewport-width là chiều ngang của trình duyệt
+vh: viewport-height là chiều cao của trình duyệt
+-->
+
+<!--ví dụ về %-->
+<p>%</p>
+<h3>thay đổi kích thước của thẻ chứa nó</h3>
+<div class="box2"></div>
+<!--ví dụ về rem-->
+
+<h3>Rem Thay đổi theo font-size thẻ html</h3>
+<!--ví dụ về em-->
+<p>Thay đổi theo thẻ gần nhất chứa thuộc tính fontsize
+</p>
+
+<div style="font-size: 10px">
+    <p style="font-size: 4em">Em</p>
+</div>
+<!--ví dụ về vw-->
+</body>
+</html>

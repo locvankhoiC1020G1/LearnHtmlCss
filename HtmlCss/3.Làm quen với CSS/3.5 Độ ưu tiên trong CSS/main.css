@@ -1,0 +1,14 @@
+/*css cho thẻ h1 có id heading-id và có class heading-class*/
+h1#heading-id.heading-class {
+    color: red;
+}
+
+/*important sẽ ghi đè tất cả css của thẻ h2,
+ trừ khi important được viết inline trong thẻ h2 thì mới có thể ghi đè*/
+h2 {
+    color: chartreuse; !important;
+}
+
+h2 {
+    color: #92a8d1;
+}
