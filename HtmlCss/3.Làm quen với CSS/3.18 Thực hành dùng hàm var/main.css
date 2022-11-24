@@ -1,4 +1,11 @@
 :root {
-    --heading-color: #333333;
-    --text-color: #404040;
+    --heading-color: #b02424;
+    --text-color: #e0c207;
+}
+
+h1{
+    color: var(--heading-color);
+}
+p{
+    color: var(--text-color);
 }

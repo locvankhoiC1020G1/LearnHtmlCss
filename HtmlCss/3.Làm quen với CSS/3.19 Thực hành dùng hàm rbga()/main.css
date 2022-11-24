@@ -1,0 +1,17 @@
+.box-1 {
+    width: 300px;
+    height: 300px;
+    background-color: green;
+}
+/*Sử dụng hàm phù hợp để CSS cho .box-2 màu nền theo các chỉ số sau:*/
+
+/*Red: 0*/
+/*Green: 0*/
+/*Blue: 0*/
+/*Alpha: 0.5*/
+.box-2 {
+    width: 50%;
+    height: 50%;
+    color: #ffffff;
+    background-color: rgba(0,0,0,0.5);
+}

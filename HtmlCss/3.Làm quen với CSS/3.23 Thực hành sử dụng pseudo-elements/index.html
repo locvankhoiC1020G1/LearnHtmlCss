@@ -1,0 +1,29 @@
+<!--Cho trước một thẻ div đã được CSS màu nền,-->
+<!--hãy sử dụng pseudo elements after để tạo một hình chữ nhật có chiều rộng là 150px,-->
+<!--chiều cao là 100px và màu nền là yellow.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-color: purple;
+        }
+
+        .container::after {
+            content: "";
+            display: block;
+            width: 150px;
+            height: 100px;
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container"></div>
+</body>
+</html>
