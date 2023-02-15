@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            /*màu chữ trắng*/
+            color: white;
+            /*căn giữa chữ bên trong*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box1 {
+            background-color: #b02424;
+        }
+
+        .box2 {
+            background-color: #168dff;
+            padding: 10px;
+            /*kích thước của border*/
+            border-width: 10px;
+            /*Kiểu của border, solid là nét liền, dash là nét đứt, none là hủy border*/
+            border-style: solid;
+            /*border-style: dashed;*/
+            /*border-style: none;*/
+            border-color: black;
+
+        }
+
+        .box3 {
+            background-color: yellow;
+            /*xét cho border có kích thước 4 chiều là 20px*/
+            /*nếu chỉ muốn xét border cho top là 10px thì các giá trị left,right,bottom phải để là 0px
+            vì kiểu solid mặc định là 3px
+            */
+            border-top-width: 10px;
+            border-left-width: 10px;
+            border-right-width: 10px;
+            border-bottom-width: 10px;
+            border-style: solid;
+            border-color: red;
+        }
+
+        .box4 {
+            background-color: magenta;
+            /*viết tắt cho border: 20px, kiểu nét liền, và màu border black*/
+            border: 20px solid black;
+        }
+    </style>
+</head>
+<body>
+<p>
+    border là lớp vỏ(viền) ôm bên ngoài lớp padding của elements,
+    làm tăng tổng kích thước của elements
+</p>
+<div class="box box1">box 1</div>
+<div class="box box2">box 2</div>
+<div class="box box3">box 3</div>
+<div class="box box4">box 3</div>
+</body>
+</html>

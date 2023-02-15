@@ -1,0 +1,43 @@
+/*reset CSS*/
+/*select lên tất cả các thẻ trong html*/
+* {
+    padding: 0;
+    margin: 0;
+    /*dùng box-sizing để khỏi tính toán khi padding và border vượt quá tổng kích thước*/
+    box-sizing: border-box;
+}
+/*
+1. Làm giao diện từ ngoài vào trong
+2. từ trên xuống dưới
+3. Làm từ tổng quan đến chi tiết
+*/
+/*Đặt các câu hỏi khi tạo 1 component(header, content....)
+1. Vị trí
+2. Kích thước(width, height
+3. Màu sắc
+4. Kiểu dáng-kiểu chữ: nghiêng đậm,...
+ví dụ: Header
+- vị trí nằm ở đầu trang
+-
+*/
+#main {
+    /*    có tính chất block, bằng với chiều ngang của website*/
+
+}
+
+#header {
+    height: 46px;
+    background-color: black;
+}
+
+#slider {
+
+}
+
+#content {
+
+}
+
+#footer {
+
+}

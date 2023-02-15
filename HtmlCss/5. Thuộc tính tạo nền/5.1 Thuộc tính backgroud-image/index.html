@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html, body {
+            margin: 0;
+        }
+
+        .header {
+            width: 100%;
+            height: 100vh;
+            /*bên trong là đường dẫn hình ảnh*/
+            background-image: url("https://cdn2.stylecraze.com/wp-content/uploads/2013/07/148-shutterstock_128569691.jpg");
+            /*    chỉnh kích thước hình ảnh có chiều rộng 100px,
+             chiều dọc nên để auto sẽ k bị méo ảnh
+            */
+            background-size: 100px auto;
+            /*nếu để chiều dọc có kích thước có định sẽ bị méo ảnh*/
+            /*background-size: 100px 200px;*/
+            /*    background có thuộc tính lặp lại nên ta phải sửa lại để k bị lặp*/
+            background-repeat: no-repeat;
+            /*nếu muốn lặp lại theo chiều ngang( trục x)
+            background-repeat: repeat-x;
+            */
+            /*nếu muốn lặp lại theo chiều dọc(trục y)
+            background-repeat: repeat-y;*/
+        }
+
+        /*    sử dụng nhiều hình ảnh làm background image,
+         sử dụng các url ngăn cách nhau bởi dấu phẩy:*/
+        /*muốn tìm kiếm hình ảnh có nền trong suốt ta gõ từ khóa hình ảnh + png.
+         hoặc click vào thanh công cụ chọn "trong suốt"
+         */
+        /*Hình ảnh nào được viết trước sẽ hiển thị bên trên*/
+        .main {
+            width: 100%;
+            height: 100vh;
+            background-image: url("https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png"),
+            url("https://previews.123rf.com/images/gromovataya/gromovataya1705/gromovataya170500001/78206869-portrait-of-a-young-beautiful-woman-with-big-eyes-.jpg");
+            background-repeat: no-repeat;
+        }
+
+        /*  hàm  linear-gradient() dải màu chuyển đều đặn.
+         có 3 tham số:
+         1.tham số đầu tiên từ 0-360 (độ); nếu giá trị lớn hơn 0 thì phải thêm deg sau tham số.
+         Deg là độ, nếu để giá trị âm nó sẽ hiển thị ngược lại.
+         2.tham số thứ 2 là màu bắt đầu chuyển, nếu muốn hiển thị độ trong suốt ta dùng hàm rgba(),
+         giá trị bên trong rbga gồm 4 tham số, trong đó:
+         tham số đầu gồm 3 mã hex của màu tham số cuối có giá trị từ 0-1, 1 là đặc nhất, ta k nhìn thấy gì
+         nếu giá trị dưới 1( ví dụ 0.4) thì ta nhìn xuyên qua được
+         3.tham số thứ 3 là màu cuối của dải màu chuyển
+         */
+        .linear {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(-45deg, rgba(12, 12, 12, 0.3), rgba(12, 12, 12, 0.8)),
+            url("https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-icon.png");
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+<!--<div class="header"></div>-->
+<!--<div class="main"></div>-->
+<div class="linear"></div>
+</body>
+</html>

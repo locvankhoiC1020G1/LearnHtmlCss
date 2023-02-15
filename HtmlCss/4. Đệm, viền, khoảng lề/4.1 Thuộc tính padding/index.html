@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            /*màu chữ trắng*/
+            color: white;
+            /*căn giữa chữ bên trong*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box1 {
+            background-color: red;
+        }
+
+        .box2 {
+            /*cách viết tắt(short hand)*/
+            /*có 1 tham số:chèn thêm padding-top,left,right,bottom 10px*/
+            padding: 10px;
+            /*có 2 tham số: chèn thêm top và bottom 10px; left right 20px*/
+            /*padding: 10px 20px;*/
+            /*có 3 tham số: chèn thêm trên 20p, trái phải 30px, dưới 10px*/
+            /*padding: 20px 30px 10px;*/
+            /*có 4 tham số: chèn thêm bên trên, phải, dưới, trái: theo chiều kim đồng hồ*/
+            /*padding: 10px 12px 8px 6px;*/
+            background-color: blue;
+        }
+
+        .box3 {
+            /* đệm thêm 40px lên trên top
+            tổng kích thước elements tăng lên 40px
+            */
+            /*khi đệm thêm ta sẽ đẩy background lên*/
+            padding-top: 40px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Padding là đệm, chèn thêm kích thước vào elements</h1>
+<div class="box box1">box 1</div>
+<div class="box box2">box 2</div>
+<div class="box box3">box 3</div>
+</body>
+</html>

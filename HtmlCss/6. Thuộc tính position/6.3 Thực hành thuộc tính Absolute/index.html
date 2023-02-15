@@ -1,0 +1,40 @@
+<!--Thực hành CSS position absolute-->
+<!--Cho trước một hình vuông có class là .box
+ và một hình vuông bên trong có class là .box-child
+Hãy làm cho hình vuông có class .box-child phủ toàn bộ hình vuông có class là box.
+-->
+<!--Gợi ý-->
+<!--Bỏ width và height của hình vuông có class .box-child
+Sử dụng thuộc tính position phù hợp
+Sử dụng lần lượt các thuộc tính top, bottom, left, right
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 250px;
+            position: relative;
+            background-color: #ccc;
+        }
+
+        .box-child {
+            background-color: rgba(128, 0, 128, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    F8 - Học lập trình để đi làm
+    <div class="box-child"></div>
+</div>
+</body>
+</html>

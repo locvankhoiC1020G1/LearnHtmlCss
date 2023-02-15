@@ -1,0 +1,8 @@
+/*reset CSS*/
+/*select lên tất cả các thẻ trong html*/
+* {
+    padding: 0;
+    margin: 0;
+    /*dùng box-sizing để khỏi tính toán khi padding và border vượt quá tổng kích thước*/
+    box-sizing: border-box;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            color: white;
+            background-color: #0051ff;
+            padding: 16px;
+            border: 2px solid black;
+            box-sizing: border-box;
+            /*  Nếu k sử muốn sử dụng box-sizing nữa:
+              box-sizing:content-box
+              */
+        }
+
+        /*    hoặc dùng unset để ghi đè để hủy.
+         Dùng khi trang web đã code rồi. ta sửa lại dùng unset
+
+         .box{
+         .box-sizing: unset;
+         }
+
+        */
+    </style>
+</head>
+<body>
+<p>thuộc tính box-sizing: Cho các element + border + padding k vượt qua kích thước đã khai báo
+    Kích thước của elements = kích thước khai báo - (padding + border)
+
+    Tuy nhiên nếu padding hoặc border vượt quá kích thước cho phép thì box sẽ bị đẩy lớn ra
+</p>
+<div class="box">Thuộc tính box-sizing</div>
+</body>
+</html>

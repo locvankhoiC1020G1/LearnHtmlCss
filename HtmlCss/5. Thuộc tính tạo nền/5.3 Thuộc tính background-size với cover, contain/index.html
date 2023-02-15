@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .header {
+            width: 100%;
+            height: 100vh;
+            background-image: url("https://znews-photo.zingcdn.me/w660/Uploaded/ofh_btgazspf/2019_04_12/50051952_276349846379199_8534437770087401203_n.jpg");
+            background-repeat: no-repeat;
+            /*sử dụng thuộc tính này để hình ảnh k bị che khuất bởi màn hình
+            background-size: contain;
+            Chia tỷ lệ hình ảnh càng lớn càng tốt trong vùng chứa của nó mà không cắt xén hoặc kéo dài hình ảnh.
+             Nếu vùng chứa lớn hơn hình ảnh, điều này sẽ dẫn đến hình ảnh xếp chồng,
+             trừ khi thuộc background-repeattính được đặt thành no-repeat..
+             Sử dụng thuộc tính này để hiển thị ảnh đày đủ k bị cắt xén
+            */
+
+            /* Chia tỷ lệ hình ảnh (trong khi vẫn giữ nguyên tỷ lệ của nó)
+             thành kích thước nhỏ nhất có thể để lấp đầy vùng chứa
+              (nghĩa là: cả chiều cao và chiều rộng của hình ảnh đều bao phủ hoàn toàn vùng chứa), không để lại khoảng trống.
+               Nếu tỷ lệ của nền khác với phần tử, hình ảnh sẽ được cắt xén theo chiều dọc hoặc chiều ngang.*/
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<div class="header"></div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!--Bên TRÌNH DUYỆT đang có một nút “Tham gia nhóm”,nút này đã có padding,-->
+<!--tuy nhiên do màu nền của nút được thiết kế có màu trắng - trùng với màu nền, nên không nhìn được khoảng padding này.-->
+
+<!--👉 Thêm viền dày 2px, kiểu solid và màu viền #333 cho nút “Tham gia nhóm”,-->
+<!--khi ấy nút này sẽ trông đẹp mắt và cảm giác dễ dàng nhấn vào hơn.-->
+
+<!--Mặc định border-width là medium, thông thường sẽ tương ứng với 3px.-->
+<!--Trong video, mình có nói là 2px là chưa hoàn toàn chính xác.-->
+<!--Các bạn nắm thông tin để làm bài tập cho đúng nhé.-->
+
+<!--Tham khảo thêm về border-width: https://www.w3schools.com/cssref/pr_border-width.asp-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html {
+            /*tương đương với 10px*/
+            font-size: 62.5%;
+        }
+
+        .fb-group {
+            padding: 16px;
+        }
+
+        .heading {
+            font-size: 2.8rem;
+        }
+
+        .desc {
+            font-size: 1.6rem;
+        }
+
+        .button-link {
+            color: #333;
+            background-color: #fff;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding: 8px 16px;
+            border: 3px solid #333;
+
+            /* Bỏ gạch chân mặc định của thẻ a */
+            text-decoration: none;
+        }
+
+        .button-link:hover {
+            color: #fff;
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+<div class="fb-group">
+    <h1 class="heading">Tham gia cộng đồng học viên F8 trên Facebook</h1>
+    <p class="desc">Hàng nghìn người khác đang học lộ trình giống như bạn.
+        Hãy tham gia hỏi đáp, chia sẻ và hỗ trợ nhau
+        trong quá trình học nhé.</p>
+    <a class="button-link" href="https://www.facebook.com/groups/f8official">Tham gia nhóm</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!--Bên tab TRÌNH DUYỆT đang hiển thị các đoạn văn,-->
+<!--các đoạn văn này nằm trong một thẻ div,-->
+<!--vì không có khoảng đệm (padding) nên bị dính sát vào viền thẻ div,-->
+<!--trông mất thẩm mỹ và khó đọc.-->
+<!--👉 Hãy đệm thêm vào thẻ div 16px sang cả 4 hướng, -->
+<!--các đoạn văn trông sẽ đẹp mắt hơn.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            background-color: #ebebeb;
+        }
+
+        div {
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <p>Hello các bạn, tiếng anh là kĩ năng rất quan trọng trong học tập lẫn trong công việc.
+        Trong học tập, giúp bạn tìm được thông tin mới nhất và chính xác.
+        Trong công việc, biết thêm một ngôn ngữ cơ hội thăng tiến dễ dàng hơn.</p>
+    <p>Duolingo là một ứng dụng giúp học từ vựng phù hợp cho nhiều độ tuổi.
+        Duolingo giúp bạn học về kĩ năng listenning - nghe, speaking - nói.
+        Ngoài học tiếng anh, bạn có thể học những tiếng khác tại Duolingo.</p>
+</div>
+</body>
+</html>

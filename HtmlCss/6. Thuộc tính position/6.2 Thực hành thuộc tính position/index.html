@@ -1,0 +1,30 @@
+<!--Cho hai hình vuông có kích thước bằng nhau,
+ dùng thuộc tính CSS phù hợp để hình vuông đỏ đè lên một nửa hình vuông xanh.-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .blue {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        .red {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="red"></div>
+<div class="blue"></div>
+</body>
+</html>
