@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--  Thêm icon  -->
+    <link rel="stylesheet" href="assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<body>
+<!--Thẻ main là div to chứa tất cả các thành phần-->
+<div id="main">
+    <!--    Begin nav-->
+    <div id="header">
+        <!--
+              Viết tắt:
+              1 thẻ ul có id là nav(navigation)
+              có 5 thẻ li bên trong,
+               bên trong mỗi thẻ li có 1 thẻ a
+                ul#nav>li*5>a -->
+        <ul id="nav">
+            <li><a href="">Home</a></li>
+            <li><a href="">Band</a></li>
+            <li><a href="">Tour</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="#">More
+                <!--        nên dùng thẻ i vì nó viết tắt của icon        -->
+                <i class="nav-arrow-down ti-angle-down"></i>
+            </a>
+                <!--                ul.subnav>li*3>a
+                            Viết tắt:
+                            1 thẻ ul có class là subnav
+                            (vì có thể subnav này dùng lại nhiều lần)
+                            có 3 thẻ li bên trong
+                            bên trong mỗi thẻ li là 1 thẻ a
+                -->
+                <ul class="subnav">
+                    <li><a href="">Merchandise</a></li>
+                    <li><a href="">Extras</a></li>
+                    <li><a href="">Media</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!--End Nav-->
+        <!--        Begin: Search Button-->
+        <div class="search-btn">
+            <i class="search-icon ti-search">
+
+            </i>
+        </div>
+        <!--        End: Search Button-->
+    </div>
+    <div id="slider">
+        <div class="text-content">
+            <h2 class="text-head">Chicago</h2>
+            <p class="text-description">The atmosphere in New York is lorem ipsum.
+            </p>
+        </div>
+    </div>
+    <div id="content">
+    </div>
+    <div id="footer">
+
+    </div>
+</div>
+
+
+</body>
+</html>
