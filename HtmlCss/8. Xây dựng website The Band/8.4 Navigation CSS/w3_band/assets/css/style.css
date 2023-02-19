@@ -44,65 +44,84 @@ ví dụ: Header
 
 }
 
-/*Css tất cả các thẻ trong thẻ li, li con của thẻ nav */
-#nav li a {
+/*CSS selector cho thẻ a phải là con trực tiếp của thẻ li,
+ li phải là con trực tiếp của thẻ id nav*/
+#nav > li > a {
     /*    #fff là màu trắng*/
     color: #fff;
+    /*viết hoa*/
+    text-transform: uppercase;
 
-    /*    Mặc định thẻ a có gạch chân,
-    khi inspect thẻ a ta sẽ thấy có thuộc tính
-    text-decoration: underline;
-    là gạch chân dưới thẻ, cần sửa lại
-    */
+}
+
+/*Css tất cả các thẻ trong thẻ li, li con của thẻ nav */
+#nav li a {
     text-decoration: none;
-    /*căn giữa chữ bằng thuộc tính line-height.
-    xét chiều cao chữ bằng với thẻ cần được căn giữa
-    bằng chiều cao của header.
-    thuộc tính line-height căn giữa chữ.
-    */
     line-height: 46px;
     /*cho các chữ cách nhau ra*/
     padding: 0 24px;
+    /*inline-block k tự động kế thừa chiều ngang của thẻ chính nó*/
+    display: inline-block;
+
 }
 
-/*Khi hover vào thẻ li con của nav.
-thì con của thẻ li được hover là thẻ a, sẽ được áp các thuộc tính sau:
-*/
-/*Để lấy được sự kiện hover của 1 trang web:
-inspect vào thẻ được hover -> chọn tab style ở trong dev tool
-rồi chọn hover sẽ ra được các thuộc tính khi hover
-*/
-#nav li:hover a {
-
-    /*Nên hover vào thẻ li.
-    Khi hover lên thẻ a thì sẽ chỉ sáng thẻ cha,
-    nhưng khi ta hover xuống thẻ con thì active hover thẻ cha sẽ mất.
-    nên ta dùng lên thẻ li cha
-    */
+/*các selector được ngăn cách nhau bởi dấu phẩy*/
+#nav > li:hover > a,
+#nav .subnav li:hover {
     color: #000;
     background-color: #ccc;
-
-/*    Mặc định thẻ a chỉ là inline.
-      inline k đặt được kích thước chiều ngang, chiều dọc.
-      Nếu để inline-block thì thẻ a sẽ ăn theo line-height 46px do được kế thừa.
-*/
-    display: inline-block;
 }
+
 
 /*CSS selector cho class subnav có thẻ cha id nav*/
 #nav .subnav {
     /*ẩn subnav*/
     display: none;
+    /*độ dài tối thiểu*/
+    min-width: 160px;
+    position: absolute;
+    /*đẩy xuống độ dài 100% = chiều cao của thẻ cha*/
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    /*tạo bóng đổ*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-#nav li {
+/*hover lên li để ẩn hiện subnav*/
+#nav li:hover .subnav {
+    display: block;
+}
+
+#nav .subnav a {
+    color: #000;
+    /*nên để các con số chia hết cho 4 để tạo khoảng cách
+    (grid-system)
+    */
+    padding: 0 12px;
+    line-height: 38px;
+}
+
+/*li cấp 1*/
+
+#nav, .subnav {
+    /*bỏ dấu chấm ở thẻ list*/
+    list-style-type: none;
+}
+
+#nav > li {
     /*inline là trên 1 hàng,
      block giữ lại tính chất khối để ta có thể đặt lại kích thước*/
     display: inline-block;
+
+}
+
+
+#nav li {
+    position: relative;
 }
 
 #slider {
-
 }
 
 #content {
