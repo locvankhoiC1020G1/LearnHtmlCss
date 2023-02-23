@@ -36,6 +36,9 @@ ví dụ: Header
 }
 
 #header {
+    /*Cho nổi lên trên trục tọa độ Y(chiều sâu, nổi)*/
+    /*Khi cho thuộc tính position:fix thì sẽ nổi lên hoặc chìm xuống so với mặt phẳng mặc định*/
+    z-index: 1;
     /*Khi có position thì tính chất kế thừa block của thẻ k còn nữa.
     Chiều rộng của thẻ hiện tại sẽ bằng content bên trong thẻ.
     để sửa lại thì thêm các thuộc tính bn dưới
@@ -176,13 +179,39 @@ Thêm thuộc tính float: right để hủy bỏ tính chất block
     background-repeat: no-repeat;
     /*background: url('../img/slider/slider2.jpg') top center / cover no-repeat;*/
 }
-#slider .text-content{
-    background-color: green;
+
+#slider .text-content {
+    color: white;
     position: absolute;
     bottom: 47px;
-    left: 50%;
-    transform: translateX(-50%);
+    /*Các cách căn giữa
+    cách 1:
+    */
+    /*left: 50%;*/
+    /*transform: translateX(-50%);*/
+    /*cách 2:
+     width: 100%;
+    text-align: center;
+    */
+    /*Cách 3*/
+    left: 0;
+    right: 0;
+    text-align: center;
 }
+
+#slider .text-heading {
+    /*độ dày, mỏng của chữ*/
+    font-weight: 500;
+    /*kích cỡ chữ*/
+    font-size: 24px;
+
+}
+
+#slider .text-description {
+    margin-top: 25px;
+    font-size: 15px;
+}
+
 #content {
 
 }
