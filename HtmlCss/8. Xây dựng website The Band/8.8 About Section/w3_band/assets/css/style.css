@@ -1,0 +1,263 @@
+/*reset CSS*/
+/*select lên tất cả các thẻ trong html*/
+* {
+    padding: 0;
+    margin: 0;
+    /*dùng box-sizing để khỏi tính toán khi padding và border vượt quá tổng kích thước*/
+    box-sizing: border-box;
+}
+
+html {
+    /*Thêm font cho site
+    font-family có sẵn trong máy Helvetica,
+    nếu k có Helvetica thì sẽ sử dụng Arial.
+    Nếu k có thì sẽ sử dụng chủng font k chân sans-serif
+    */
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/*
+1. Làm giao diện từ ngoài vào trong
+2. từ trên xuống dưới
+3. Làm từ tổng quan đến chi tiết
+*/
+/*Đặt các câu hỏi khi tạo 1 component(header, content....)
+1. Vị trí
+2. Kích thước(width, height
+3. Màu sắc
+4. Kiểu dáng-kiểu chữ: nghiêng đậm,... tròn, vuông
+ví dụ: Header
+- vị trí nằm ở đầu trang
+-
+*/
+#main {
+    /*    có tính chất block, bằng với chiều ngang của website*/
+
+}
+
+#header {
+    /*Cho nổi lên trên trục tọa độ Y(chiều sâu, nổi)*/
+    /*Khi cho thuộc tính position:fix thì sẽ nổi lên hoặc chìm xuống so với mặt phẳng mặc định*/
+
+    z-index: 1;
+    /*Khi có position thì tính chất kế thừa block của thẻ k còn nữa.
+    Chiều rộng của thẻ hiện tại sẽ bằng content bên trong thẻ.
+    để sửa lại thì thêm các thuộc tính bn dưới
+    */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 46px;
+    background-color: black;
+}
+
+#nav {
+    /*làm mất cái tính kế thừa của block.
+    */
+    display: inline-block;
+
+}
+
+/*CSS selector cho thẻ a phải là con trực tiếp của thẻ li,
+ li phải là con trực tiếp của thẻ id nav*/
+#nav > li > a {
+    /*    #fff là màu trắng*/
+    color: #fff;
+    /*viết hoa*/
+    text-transform: uppercase;
+
+}
+
+/*Css tất cả các thẻ trong thẻ li, li con của thẻ nav */
+#nav li a {
+    text-decoration: none;
+    line-height: 46px;
+    /*cho các chữ cách nhau ra*/
+    padding: 0 24px;
+    /*inline-block k tự động kế thừa chiều ngang của thẻ chính nó*/
+    display: inline-block;
+}
+
+/*các selector được ngăn cách nhau bởi dấu phẩy*/
+#nav > li:hover > a,
+#nav .subnav li:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+
+/*CSS selector cho class subnav có thẻ cha id nav*/
+#nav .subnav {
+    /*ẩn subnav*/
+    display: none;
+    /*độ dài tối thiểu sẽ tăng lên nếu phần tử con tăng*/
+    min-width: 160px;
+    position: absolute;
+    /*đẩy xuống độ dài 100% = chiều cao của thẻ cha*/
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    /*tạo bóng đổ*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/*hover lên li để ẩn hiện subnav*/
+#nav li:hover .subnav {
+    display: block;
+}
+
+#nav .subnav a {
+    color: #000;
+    /*nên để các con số chia hết cho 4 để tạo khoảng cách
+    (grid-system)
+    */
+    padding: 0 12px;
+    line-height: 38px;
+}
+
+#nav .nav-arrow-down {
+    font-size: 14px;
+}
+
+/*Css cho nút search*/
+/*Thuộc tính div có tính chất block, kế thừa độ rộng từ thẻ cha
+Thêm thuộc tính float: right để hủy bỏ tính chất block
+*/
+#header .search-btn {
+    float: right;
+}
+
+#header .search-icon {
+    padding: 0 21px;
+    line-height: 46px;
+    color: #fff;
+    font-size: 20px;
+
+}
+
+#header .search-btn:hover {
+    background-color: #f44336;
+    /*cursor: thay đổi hình ảnh con chuột*/
+    cursor: pointer;
+}
+
+/*li cấp 1*/
+
+#nav, .subnav {
+    /*bỏ dấu chấm ở thẻ list*/
+    list-style-type: none;
+}
+
+#nav > li {
+    /*inline là trên 1 hàng,
+     block giữ lại tính chất khối để ta có thể đặt lại kích thước*/
+    display: inline-block;
+
+}
+
+
+#nav li {
+    position: relative;
+}
+
+#slider {
+    position: relative;
+    /*để header k che đi nội dung của slider*/
+    margin-top: 46px;
+    /*tăng giảm hình ảnh theo tỉ lệ chiều dài ảnh gấp đôi chiều cao
+    padding-top khi thêm giá trị % sẽ padding theo chiều ngang của chính nó
+    như ví dụ dưới:
+    kích thước tỉ lệ theo 50% chiều ngang của chính nó,
+    lúc nào mở rộng phóng to thu nhỏ theo % của chính nó
+    */
+    padding-top: 50%;
+    /*ảnh đổ theo lớp padding*/
+    /*dòng dưới viết tắt theo:*/
+    background-image: url(../img/slider/slider2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*background: url('../img/slider/slider2.jpg') top center / cover no-repeat;*/
+}
+
+#slider .text-content {
+    color: white;
+    position: absolute;
+    bottom: 47px;
+    /*Các cách căn giữa
+    cách 1:
+    */
+    /*left: 50%;*/
+    /*transform: translateX(-50%);*/
+    /*cách 2:
+     width: 100%;
+    text-align: center;
+    */
+    /*Cách 3*/
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+#slider .text-heading {
+    /*độ dày, mỏng của chữ*/
+    font-weight: 500;
+    /*kích cỡ chữ*/
+    font-size: 24px;
+
+}
+
+#slider .text-description {
+    margin-top: 25px;
+    font-size: 15px;
+}
+
+#content {
+
+}
+
+#content .content-section {
+    width: 800px;
+    margin: 0 auto;
+    /*padding trên dưới 64px, trái phải 0 px*/
+    padding: 64px 0;
+    /*Hoặc*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+}
+
+#content .section-heading {
+    /*Viết hoa*/
+    text-transform: uppercase;
+    /*Mặc định font-size trình duyệt là 16px*/
+    font-size: 30px;
+    text-align: center;
+    /*Khoảng cách giữa các chữ*/
+    letter-spacing: 4px;
+}
+
+#content .section-sub-heading {
+    /*độ làm mờ*/
+    opacity: 60%;
+    /*phong cách chữ nghiêng*/
+    font-style: italic;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 25px;
+}
+
+#content .about-text {
+    font-size: 15px;
+    margin-top: 25px;
+    /*căn đều 2 bên chữ*/
+    text-align: justify;
+    /*chỉnh độ cao của 1 dòng, tiếng anh nên để 1.4
+    tiếng việt nên để 1.6
+    */
+    line-height: 1.4;
+}
+
+#footer {
+
+}
