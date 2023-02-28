@@ -445,12 +445,119 @@ vì sau này website to ra có thể có nhiều member-item css sẽ bị trùn
     margin-top: 15px;
 }
 
-.place-buy-btn:hover{
+.place-buy-btn:hover {
     color: #000;
     background-color: #ccc;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*Lớp over lay(lớp phủ)*/
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-header {
+    height: 130px;
+    background: #009688;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+}
+
+.modal-heading-icon {
+    margin-right: 16px;
+}
+
+.modal-container {
+    position: relative;
+    min-height: 200px;
+    /*Khi co lại có chiều rộng tối đa,
+    và cách 2 bên 16px
+    max-width là chiều ngang tối đa
+    */
+    max-width: calc(100% - 32px);
+    width: 900px;
+    background-color: white;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #ffffff;
+    /*Nên sử dụng padding,
+     vùng padding to lên nên sẽ dễ click chuột hơn*/
+    padding: 16px;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.modal-close:hover {
+    color: black;
+    opacity: 1;
+    background-color: #fff;
+}
+
+.modal-body {
+    padding: 16px;
+}
+
+.modal-label {
+    /*display:block là các thẻ nằm ở các dòng khác nhau,
+     k trên cùng 1 hàng*/
+    display: block;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+input.modal-input {
+    border: 1px solid #ccc;
+    font-size: 15px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 24px;
+}
+
+button#buy-tickets:hover {
+    opacity: 0.9;
+}
+
+button#buy-tickets {
+    background-color: #009688;
+    text-transform: uppercase;
+    font-size: 15px;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+.modal-footer {
+    padding: 16px;
+    text-align: right;
+}
+
+.modal-footer a {
+    color: #2196F3;
 }
 
 /*Footer section*/
 #footer {
 
 }
+
+/*Responsive*/
