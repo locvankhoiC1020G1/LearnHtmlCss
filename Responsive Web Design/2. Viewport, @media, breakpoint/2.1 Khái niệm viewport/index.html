@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--   https://www.w3schools.com/css/css_rwd_viewport.asp -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        table, tr, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<p>
+    Nội dung HTML sẽ đối ứng với màn hình giao diện PC,
+    nên khi xem trên các thiết bị như Tablet hay SP,
+    nội dung sẽ hiển thị không như ý muốn,
+    cụ thể là nội dung bị phóng to hoặc thu nhỏ với tỷ lệ khác đi,
+    để giải quyết vấn đề này ta dùng khai báo viewport cho file HTML.
+</p>
+<div>
+    <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>meta<span
+            class="attributecolor" style="color:red"> name<span class="attributevaluecolor" style="color:mediumblue">="viewport"</span> content<span
+            class="attributevaluecolor"
+            style="color:mediumblue">="width=device-width, initial-scale=1.0"</span></span><span class="tagcolor"
+                                                                                                 style="color:mediumblue">&gt;</span></span>
+</div>
+<p>
+    Nội dung viewport được viết bên trong tag
+    head của file HTML.
+    Để khi khởi tạo thẻ này, ta có thể ghi dấu ! và tab khi khởi tạo file html là được
+</p>
+<table class="mt10 tableNormal">
+    <tbody>
+    <tr>
+        <th class="w25p">Giá trị</th>
+        <th>Mô tả</th>
+    </tr>
+    <tr>
+        <td>width=device-width</td>
+        <td>Chiều rộng bằng chiều rộng của thiết bị.</td>
+    </tr>
+    <tr>
+        <td>height=device-height</td>
+        <td>Chiều cao bằng chiều cao của thiết bị.</td>
+    </tr>
+    <tr>
+        <td>maximum-scale=1.0</td>
+        <td>Tỷ lệ lớn nhất (1.0 ứng với 100%).</td>
+    </tr>
+    <tr>
+        <td>minimum-scale=1.0</td>
+        <td>Mức phóng to tối thiểu của thiết bị (1.0 ứng với 100%).</td>
+    </tr>
+    <tr>
+        <td>initial-scale=1.0</td>
+        <td>Độ phóng to ban đầu (1.0 ứng với 100%).</td>
+    </tr>
+    <tr>
+        <td>user-scalable=no</td>
+        <td>Cho phép người dùng phóng to màn hình hay không (giá trị <code>yes</code> hoặc <code>no</code>)</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

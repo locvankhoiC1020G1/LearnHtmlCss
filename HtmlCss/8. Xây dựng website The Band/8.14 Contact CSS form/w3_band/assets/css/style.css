@@ -37,11 +37,33 @@ ví dụ: Header
     margin-right: -8px;
 }
 
+/*Nếu element ở ngay sát thẻ row thì dùng before
+còn nếu đặt ở cuối của thẻ thì ta dùng after.
+ở đây ta dùng after để clear float
+*/
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.mt-8 {
+    margin-top: 8px !important;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
 /*tạo cột*/
 .col {
     float: left;
     padding-left: 8px;
     padding-right: 8px;
+}
+
+.col-full {
+    width: 100%;
 }
 
 /*2 cột trên 1 hàng*/
@@ -53,6 +75,7 @@ ví dụ: Header
 .col-third {
     width: calc(100% / 3);
 }
+
 
 .clear {
     clear: both;
@@ -573,6 +596,42 @@ button#buy-tickets {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/*Contact form*/
+.contact-content {
+    margin-top: 48px;
+}
+
+.contact-info {
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+.contact-form {
+    font-size: 15px;
+}
+
+.contact-form .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.contact-form .form-submit-btn {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
+    padding: 10px 16px;
+    float: right;
+}
+
+/*Selector nâng cao
+trong class có chuỗi ti- thì sẽ được chọn
+*/
+.contact-info i[class*="ti-"] {
+    width: 30px;
+    display: inline-block;
 }
 
 /*Footer section*/

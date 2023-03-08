@@ -1,0 +1,18 @@
+/*Với chiều ngang nhỏ hơn hoặc bằng 1024 thì sẽ
+apply thuộc tính này
+*/
+/*@media only screen and (max-width: 1024px) {*/
+/*    p {*/
+/*        color: green;*/
+/*    }*/
+/*}*/
+
+/*Với chiều ngang lớn hơn hoặc bằng 720px
+sẽ apply thuộc tính này
+*/
+@media only screen and (min-width: 720px) {
+    p {
+        color: red;
+    }
+}
+
