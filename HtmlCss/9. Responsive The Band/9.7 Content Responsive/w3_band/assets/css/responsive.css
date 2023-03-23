@@ -1,0 +1,82 @@
+/*PC*/
+@media (min-width: 1024px) {
+
+}
+
+/*Tablet*/
+@media (min-width: 740px) and(max-width: 1023px) {
+
+}
+
+/*Mobile*/
+@media (max-width: 740px) {
+
+    /**/
+    .s-col-full {
+        width: 100%;
+    }
+    .s-mt-16{
+        margin-top: 16px !important;
+    }
+    #header {
+        overflow: hidden;
+    }
+
+    #header .mobile-menu-btn {
+        display: block;
+    }
+
+    #header .search-btn {
+        display: none;
+    }
+
+    #nav {
+        display: block;
+    }
+
+    /*Cho các thẻ li header hiển thị theo chiều dọc*/
+    #nav > li {
+        display: block;
+    }
+
+    #nav li a {
+        width: 100%;
+        height: 100%;
+        padding: 1px 24px;
+    }
+
+    #nav li:hover {
+        background-color: #cccccc;
+    }
+
+    /*css cho thẻ đầu tiên của #nav*/
+    #nav > li:first-child {
+        display: inline-block;
+    }
+
+    #nav .subnav {
+        /*reset về giá trị mặc định, bỏ đi absolute*/
+        position: initial;
+        background-color: #333333;
+    }
+
+    #nav .subnav a {
+        color: #ffffff;
+        /*Chiều cao trên thẻ ở mobile phải cao ít nhất 42-48px mới dễ bấm*/
+        padding: 5px 41px;
+    }
+
+    #content .member-item {
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    #content .member-img {
+        width: 60%;
+    }
+
+    .contact-form {
+        margin-top: 16px;
+    }
+
+}
