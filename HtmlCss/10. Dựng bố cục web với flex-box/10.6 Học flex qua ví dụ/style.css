@@ -1,0 +1,215 @@
+html {
+    background-color: #cccccc;
+    margin: 0;
+}
+
+:root {
+    --percent: 12px;
+}
+
+/*Nav items*/
+.nav {
+    min-height: 42px;
+    background-color: #EF5122;
+    display: flex;
+    /*Cho các items cách xa nhau ra*/
+    justify-content: space-between;
+}
+
+.nav-list {
+    padding-left: 0;
+    /*tạo khoảng trống giữa các items*/
+    margin: auto 16px;
+}
+
+.nav-item {
+    color: #ffffff;
+    /*bỏ dấu tròn trước các thẻ li*/
+    list-style: none;
+    margin: 0 8px;
+    display: inline-block;
+}
+
+/*Form layout*/
+.form-container {
+    max-width: 720px;
+    padding: 32px;
+    margin: 36px auto 0 auto;
+    background-color: #ffffff;
+}
+
+.form_row {
+    padding: 8px 0;
+    /*flex trên cùng 1 hàng dùng inline-flex*/
+    /*display: inline-flex;*/
+    display: flex;
+
+}
+
+.form_label {
+    /*cho label và input cách đều nhau*/
+    min-width: 90px;
+}
+
+.form_input {
+    /*    trong layout flex có nhiều items
+     mà chỉ có 1 items có flex:1 hoặc giá trị lớn hơn 1 trở lên
+     thì items đó sẽ cố gắng chiếm hết khoảng không gian có thể
+     chiếm được theo chiều trục main axis
+    */
+    flex: 1;
+}
+
+/*Column layout*/
+.column-layout {
+    margin-top: 36px;
+    padding: 12px 0;
+    background-color: #ffffff;
+    display: flex;
+}
+
+.column-item {
+    padding: 0 16px;
+    flex: 1;
+}
+
+.sidebar-one {
+    flex: 1;
+}
+
+.sidebar-two {
+    flex: 1;
+}
+
+.main-column {
+    /*kích cỡ thẻ này lớn gấp 3 lần các thẻ khác*/
+    flex: 3;
+}
+
+/*Feature layout*/
+.feature-layout {
+    margin-top: 36px;
+    display: flex;
+    /*space between k có khoảng trống 2 bên ngoài cùng bên trái và bên phải
+    space-around sẽ có khoảng trống ngoài cùng 2 bên trái phải
+    space-evenly sẽ tạo khoảng trống đều nhau kể cả mép trái phải lẫn các items
+    */
+    justify-content: space-around;
+}
+
+.feature-item {
+    padding: 12px 16px;
+    margin-top: 16px;
+    /*Tạo kích cỡ cho main-size(kích cỡ của flex-item)
+    tạo 30%, 10% còn lại làm khoảng trống
+    */
+    flex-basis: 30%;
+}
+
+.feature-item:nth-child(1) {
+    background-color: #4c9e9e;
+}
+
+.feature-item:nth-child(2) {
+    background-color: #92a8d1;
+}
+
+.feature-item:nth-child(3) {
+    background-color: #5F395A;
+}
+
+/*Wrap layout*/
+.wrap-layout {
+    background-color: #ffffff;
+    margin-top: 36px;
+    padding: 12px 0 32px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.wrap-layout_item {
+    width: 148px;
+    height: 90px;
+    text-align: center;
+    line-height: 90px;
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 20px;
+    background-color: #e0c207;
+    color: #ffffff;
+}
+
+/*Center layout*/
+.center-layout {
+    background-color: #4c9e9e;
+    margin: 36px auto 0 auto;
+    padding: 32px 0;
+    max-width: 640px;
+    height: 360px;
+    display: flex;
+}
+
+.center-layout_item {
+    font-size: 42px;
+    font-weight: 700;
+    /*dùng đê căn giữa các items*/
+    margin: auto;
+}
+
+/*Chart layout*/
+
+.chart-layout {
+    margin: 36px auto 0 auto;
+    padding: 32px 0;
+    height: 320px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    /*Nếu đặt align-self vào thẻ con thì thẻ cha
+    kcaanf thêm flex-end*/
+    /*align-items: flex-end;*/
+}
+
+.chart-layout_item {
+    align-self: flex-end;
+    width: 60px;
+    color: #ffffff;
+    text-align: center;
+    height: var(--percent);
+    background-color: #f44336;
+    /*growth là tên animation
+    ease-in là kiểu chuyển động lúc đầu từ từ sau đó nhanh
+    0.5s là thời gian của animation từ from tới to
+    */
+    animation: growth ease-in 0.5s;
+}
+
+/*Thêm hiệu ứng chuyển động*/
+@keyframes growth {
+    from {
+        opacity: 0;
+        height: calc(var(--percent) - 50%);
+    }
+    to {
+        opacity: 1;
+        height: var(--percent );
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
