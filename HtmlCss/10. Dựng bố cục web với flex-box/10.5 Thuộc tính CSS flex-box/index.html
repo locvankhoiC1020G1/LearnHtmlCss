@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h2 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<img src="flex_terms.png" alt="">
+<h1> Tất cả các thuộc tính màu đỏ đều có thể thay đổi được qua CSS</h1>
+<div>
+    <h2>display:flex|inline-flex</h2>
+    <h3>Quyết định sử dụng layout flexbox hay k.
+        Muốn tạo ra flex container và items sẽ sử dụng thuộc tính này
+    </h3>
+</div>
+<div>
+    <h2>flex-direction:row|column</h2>
+    <h3>Thay đổi phương hướng của main axis</h3>
+    <h4>Row sẽ nằm ngang giống mô hình</h4>
+    <h4>column sẽ xếp theo chiều dọc</h4>
+</div>
+<div>
+    <h2>flex-wrap:nowrap|wrap|wrap-reverse</h2>
+    <h3>giá trị mặc định là nowrap </h3>
+    <h3>wrap dùng để xuống dòng</h3>
+    <h3>wrap reverse sẽ đảo chiều cross start, và cross end cho các item lộn ngược lại</h3>
+</div>
+<div>
+    <h2>flex-basis: length</h2>
+    <h3>thay đổi kích thước của main size tùy vào trường hợp trục axis ở hướng nào(ngang hoặc dọc)</h3>
+</div>
+<div>
+    <h2>justify-content: flex-start|flex-end|center|space-between|space-around</h2>
+    <h3>trường hợp main axis nằm ngang: căn được các flex items theo phương hướng của main axis theo, trái, phải,
+        giữa</h3>
+    <h3>trường hợp main axis nằm dọc: căn lên trên, ở giữa, hoặc ở dưới theo chiều cao</h3>
+</div>
+<div>
+    <h2>justify-self: flex-start|flex-end|center main axis</h2>
+    <h3>Nếu justify-content áp dụng cho thẻ cha thì justify-self áp dụng cho thẻ con</h3>
+    <h3>Nếu đã đặt justify-content cho cha thì k cần đặt thuộc tính này cho con</h3>
+</div>
+<div>
+    <h2>align-content: flex-start|flex-end|center</h2>
+    <h3> xét phương hướng items theo cross size</h3>
+</div>
+<div>
+    <h2>align-self:flex-start|flex-end|center</h2>
+    <h3>giống như justify-content nhưng xét theo cross axis</h3>
+</div>
+<div>
+    <h2>flex-grow: number </h2>
+    <h3>thay đổi kích thước của main size(kích thước của flex items)</h3>
+    <h3>nếu main axis theo chiều ngang thì sẽ xét theo chiều ngang</h3>
+    <h3>nếu main axis theo chiều dọc thì sẽ xét theo chiều dọc</h3>
+</div>
+<div>
+    <h2>flex-shrink: number</h2>
+    <h3>thu nhỏ lại(ngược lại với flex-grow)</h3>
+</div>
+<div>
+    <h2>flex:</h2>
+    <h3>là cú phát short-hand(viết tắt) của flex-basis,flex-grow,flex-shrink</h3>
+</div>
+<div>
+    <h2>order:</h2>
+    <h3>quyết định thứ tự flex-items hiển thị trước sau,</h3>
+</div>
+<div>
+    <h2>flex-flow</h2>
+    <h3>cú pháp short hand của flex-wrap,flex-direction</h3>
+</div>
+</body>
+</html>
