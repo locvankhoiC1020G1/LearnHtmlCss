@@ -32,6 +32,8 @@
         </div>
     </form>
 </div>
+<h1>Hiển thị các vị trí items với order, order nhỏ nhất đứng đầu tiên ở main start</h1>
+
 <!--Column layout-->
 <div class="column-layout">
     <div class="column-item sidebar-one">
@@ -117,7 +119,39 @@
 <!--End-->
 <div class="the-end">
     <div class="the-end_first">
-        <p></p>
+        <p>initial
+            The item is sized according to its width and height properties.
+            It shrinks to its minimum size to fit the container, but does
+            not grow to absorb any extra free space in the flex container.
+            This is equivalent to setting "flex: 0 1 auto".
+        </p>
+        <p>auto
+            The item is sized according to its width and height properties,
+            but grows to absorb any extra free space in the flex container,
+            and shrinks to its minimum size to fit the container. This is
+            equivalent to setting "flex: 1 1 auto".</p>
+        <p>none
+            The item is sized according to its width and height properties.
+            It is fully inflexible: it neither shrinks nor grows in
+            relation to the flex container. This is equivalent to setting
+            "flex: 0 0 auto".</p>
+    </div>
+    <div class="the-end_second">
+        <div class="the-end_second-one">
+            <p><'flex-grow'>
+                Defines the flex-grow of the flex item.
+                Negative values are considered invalid.
+                Defaults to 1 when omitted.
+                (initial is 0)</p>
+        </div>
+        <div class="the-end_second-two">
+            <p>
+                <'flex-shrink'>
+                Defines the flex-shrink of the flex item.
+                Negative values are considered invalid.
+                Defaults to 1 when omitted. (initial is 1)
+            </p>
+        </div>
     </div>
 </div>
 </body>

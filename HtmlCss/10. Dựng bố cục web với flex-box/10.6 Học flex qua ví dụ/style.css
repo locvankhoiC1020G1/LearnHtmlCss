@@ -71,14 +71,17 @@ html {
 .column-item {
     padding: 0 16px;
     flex: 1;
+    order: 1
 }
 
 .sidebar-one {
     flex: 1;
+    order: 3
 }
 
 .sidebar-two {
     flex: 1;
+    order: 2;
 }
 
 .main-column {
@@ -90,6 +93,7 @@ html {
 .feature-layout {
     margin-top: 36px;
     display: flex;
+    flex-direction: column;
     /*space between k có khoảng trống 2 bên ngoài cùng bên trái và bên phải
     space-around sẽ có khoảng trống ngoài cùng 2 bên trái phải
     space-evenly sẽ tạo khoảng trống đều nhau kể cả mép trái phải lẫn các items
@@ -104,6 +108,13 @@ html {
     tạo 30%, 10% còn lại làm khoảng trống
     */
     flex-basis: 30%;
+}
+
+/*nếu ở màn hình lớn hơn 740px thì lay out hiển thị dạng hàng ngang*/
+@media (min-width: 740px) {
+    .feature-layout {
+        flex-direction: row
+    }
 }
 
 .feature-item:nth-child(1) {
@@ -124,6 +135,7 @@ html {
     margin-top: 36px;
     padding: 12px 0 32px 0;
     display: flex;
+    /*Khi tổng chiều ngang k chứa được các item thì các items sẽ rớt xuống hàng dưới*/
     flex-wrap: wrap;
     justify-content: space-around;
 }
@@ -193,21 +205,59 @@ html {
     }
     to {
         opacity: 1;
-        height: var(--percent );
+        height: var(--percent);
     }
 }
 
+.the-end {
+    margin: 12px auto 48px auto;
+    padding: 32px 0;
+    max-width: 740px;
+    min-height: 360px;
+    display: flex;
+    /*đảo lộn main start và main end*/
+    flex-direction: row-reverse;
+}
+
+.the-end_first {
+    padding: 4px 16px;
+    background-color: #fff;
+    flex: 1;
+}
+
+.the-end_second {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.the-end_second-one {
+    padding: 4px 16px;
+    background-color: greenyellow;
+    flex: 1;
+}
+
+.the-end_second-two {
+    padding: 4px 16px;
+    background-color: #009688;
+    flex: 1;
+}
 
 
+/*Bổ xung về css flex
 
+flex-flow: row wrap
+=
+flex-direction: row;
+flex-wrap:wrap;
+*/
 
-
-
-
-
-
-
-
+/*flex: 1
+=
+flex-grow: 1;
+flex-shrink: 1;
+flex-basis: 1;
+*/
 
 
 
