@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="toast">
+
+</div>
+<div>
+    <div onclick="showSuccessToast();" class="btn btn--success">
+        Show Success
+    </div>
+    <div onclick="showErrorToast();" class="btn btn--error">
+        Show Error Toast
+    </div>
+</div>
+<script>
+    /* Khởi tạo hàm toast
+     Đặc giá trị mặc định: title, message, type = trống, duration = 3000
+      */
+    function toast({
+                       title = '',
+                       message = 'Máy tính kết nối internet(Window UBUNTU, hoặc MacOS)',
+                       type = 'info',
+                       //Thời gian ẩn toast
+                       duration = 1000
+                   }) {
+
+        const main = document.getElementById('toast');
+        //Nếu tồn tại main thì
+        if (main) {
+            // Tạo ra 1 thẻ div mới
+            const toast = document.createElement('div');
+            //Tạo ra 1 biến
+            const autoRemoveID = setTimeout(function () {
+                main.removeChild(toast)
+            }, duration + 1000)
+            //Xóa toast khi click
+            toast.onclick = function (e) {
+                //Nếu bấm trúng thẻ con có class là toast__close thì sẽ đóng lại
+                //Tìm class của chính nó xem có class toast__close k,
+                // nếu k có thì tìm ra thẻ cha
+                if (e.target.closest('.toast__close')) {
+                    main.removeChild(toast);
+                    clearTimeout(autoRemoveID)
+                }
+                console.log(e.target)
+            }
+            /* Tạo ra 1 mảng đối tượng gồm các icon, để thay đổi
+            khi success thì icon sẽ là success,
+            warning là icon warning,...
+            * */
+            const icons = {
+                success: 'fas fa-check-circle',
+                info: 'fas fa-info-circle',
+                warning: 'fas fa-exclamation-circle',
+                error: 'fa fa-check-circle'
+            }
+            /*Lấy ra icon bằng 1 phần tử trong mảng icons bên trên */
+            const icon = icons[type]
+            //Chia cho 1000 để ra số giây, làm tròn đến số thập phân số 2( ví dụ 3.44)
+            const delay = (duration / 1000).toFixed(2)
+            /* Thêm 1 class là toast, type của thẻ toast vào thẻ div vừa tạo
+            Vd type được gọi bên dưới là success thì sẽ là màu xanh khi được gọi
+            type = error thì sẽ là màu đỏ, màu sắc được quyết định trong file css
+            */
+            toast.classList.add('toast', `toast--${type}`);
+            // Thời gian delay
+            toast.style.animation = `slideInLeft 0.3s ease, fadeOut linear 1s ${delay}s forwards`
+            //Cho thêm nội dung bên trong vào trong thẻ con
+            toast.innerHTML = `<div class="toast__icon"><i class="${icon}"></i></div>
+        <div class="toast__body">
+<!--        Truyền biến title vào bên trong, k để cứng-->
+            <div class="toast__tile">${title}</div>
+            <div class="toast__msg">${message}</div>
+        </div>
+        <div class="toast__close"><i class="fa-sharp fa-solid fa-xmark"></i></div>`;
+            //Sau đó thêm nội dung vừa tạo đó thêm vào trong thẻ có id là #toast
+            main.append(toast)
+            //Tự động xóa bỏ toast sau khoảng thời gian duration
+
+        }
+    }
+
+    //Gọi hàm
+    //    Nhận các tham số mặc định khi gọi hàm
+
+
+    function showSuccessToast() {
+        toast({
+            title: 'Success',
+            message: 'Đăng ký thành công',
+            type: 'success',
+            //Khoảng thời gian bao lâu thì ẩn
+            duration: 5000
+        })
+    }
+
+    function showErrorToast() {
+        toast({
+            title: 'Error',
+            message: 'Đăng ký thất bại',
+            type: 'error',
+            //Khoảng thời gian bao lâu thì ẩn
+            duration: 5000
+        })
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Helvetica Nue";
+}
+
+body > div {
+    margin: auto;
+}
+
+.btn {
+    /*vì thẻ div có tính chất block(môi thẻ nằm 1 dòng)
+    ta đang cần các thẻ nằm cùng 1 dòng nên để inline-block
+    */
+    /*giữa 2 thẻ có thuộc tính inline-block sẽ có 1 khoảng nhỏ cách nhau */
+    display: inline-block;
+    text-decoration: none;
+    /*Màu nền trong suốt*/
+    background-color: transparent;
+    border: none;
+    /*Bỏ viền của nút input hoặc type = button khi click*/
+    outline: none;
+    color: #ffffff;
+    /*    K nên xét width cố định cho nút(btn)
+    vì text bên trong dài ra thì nút cũng tự phải dài ra
+    text bên trong ngắn quá thì sẽ tự động ngắn lại.
+    và đặt min-width để nếu chữ ngắn quá sẽ k bị xấu.
+    dùng thêm padding để tăng độ dài của btn
+    */
+    min-width: 100px;
+    padding: 12px 48px;
+    border-radius: 50px;
+    cursor: pointer;
+    /*Mặc định opacity của btn là 1,
+    ở dưới ta cho hiệu ứng hover đổi opacity
+    để người dùng biết khi đưa chuột lên
+    */
+    /*Tạo ra keyframes cho sự thay đổi(hover)*/
+
+    /*opacity là thuộc tính css khi đổi,
+     0.2s là thời gian khi đổi opacity từ 1 -> 0.8 khi hover
+    ease là hiệu ứng
+    */
+    transition: opacity 0.2s ease;
+}
+
+/*thay đổi hiệu ứng khi đưa chuột lên nút*/
+.btn:hover {
+    opacity: 0.8;
+}
+
+/*Tạo các kích cỡ các nút*/
+
+.btn--size--s {
+    padding: 8px 32px;
+}
+
+.btn--size--l {
+    padding: 16px 56px;
+
+}
+
+/*css cho class btn có class btn đứng ngay cạnh nhau*/
+.btn + .btn {
+    margin-left: 16px;
+}
+
+.btn--success {
+    background-color: green;
+}
+
+.btn--warn {
+    background-color: #e0c207;
+}
+
+.btn--error {
+    background-color: #f44336;
+}
+
+/*Hiển thị nút k bấm được*/
+.btn--disabled {
+    opacity: 0.5 !important;
+    /*Đổi biểu tượng chuột khi hover lên thành mũi tên,
+     để người dùng biết k bấm được*/
+    cursor: default;
+}
+
+
+/*Toast Message*/
+#toast {
+    position: fixed;
+    top: 32px;
+    right: 32px;
+}
+
+.toast {
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 2px;
+    /*Tạo viền bên trái*/
+    border-left: 4px solid;
+    /*Tỏa xuống dưới 5px
+    blur 8px
+    màu đen, độ mờ 0.08
+    */
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+    padding: 20px 0;
+    min-width: 400px;
+    max-width: 450px;
+    /*
+    animation fadeOut,
+    sau 3s sẽ mờ đi
+    Thêm forward để chạy ở điểm cuối animation, tức là opacity = 0
+    */
+    /*animation: slideInLeft 0.3s ease, fadeOut linear 1s 3s forwards;*/
+    /*ẩn đều đều sau 0.3s*/
+    transition: all linear 0.3s;
+}
+
+/*Thêm animation trượt từ trái sang để xuất hiện*/
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        /*Phải + thêm 32px mới có thể ẩn do position fixed của thẻ #toast*/
+        transform: translateX(calc(100% + 32px));
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*Cho mờ đi sau mấy giây*/
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+
+}
+
+.toast--success {
+    border-color: springgreen;
+}
+
+.toast--success .toast__icon {
+    color: springgreen;
+}
+
+.toast--info {
+    border-color: deepskyblue;
+}
+
+.toast__info .toast__icon {
+    color: deepskyblue;
+}
+
+.toast--warning {
+    border-color: yellow;
+}
+
+.toast--warning .toast__icon {
+    color: yellow;
+}
+
+.toast--error {
+    border-color: red;
+}
+
+.toast--error .toast__icon {
+    color: red;
+}
+
+.toast + .toast {
+    margin-top: 24px;
+}
+
+.toast__icon {
+    font-size: 24px;
+}
+
+.toast__icon, .toast__close {
+    padding: 0 16px;
+}
+
+.toast__body {
+    /*Để content khi ngắn vẫn chiếm hết khoảng không,
+    đẩy 2 icon check và x ra sát 2 bên
+    */
+    flex-grow: 1;
+}
+
+.toast__tile {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.toast__msg {
+    font-size: 16px;
+    color: #888888;
+    margin-top: 6px;
+    line-height: 1.5;
+}
+
+.toast__close {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+

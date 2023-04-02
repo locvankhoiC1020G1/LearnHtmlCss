@@ -1,0 +1,94 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Helvetica Nue";
+}
+
+body > div {
+    margin: auto;
+}
+
+.btn {
+    /*vì thẻ div có tính chất block(môi thẻ nằm 1 dòng)
+    ta đang cần các thẻ nằm cùng 1 dòng nên để inline-block
+    */
+    /*giữa 2 thẻ có thuộc tính inline-block sẽ có 1 khoảng nhỏ cách nhau */
+    display: inline-block;
+    text-decoration: none;
+    /*Màu nền trong suốt*/
+    background-color: transparent;
+    border: none;
+    /*Bỏ viền của nút input hoặc type = button khi click*/
+    outline: none;
+    color: #ffffff;
+    /*    K nên xét width cố định cho nút(btn)
+    vì text bên trong dài ra thì nút cũng tự phải dài ra
+    text bên trong ngắn quá thì sẽ tự động ngắn lại.
+    và đặt min-width để nếu chữ ngắn quá sẽ k bị xấu.
+    dùng thêm padding để tăng độ dài của btn
+    */
+    min-width: 100px;
+    padding: 12px 48px;
+    border-radius: 50px;
+    cursor: pointer;
+    /*Mặc định opacity của btn là 1,
+    ở dưới ta cho hiệu ứng hover đổi opacity
+    để người dùng biết khi đưa chuột lên
+    */
+    /*Tạo ra keyframes cho sự thay đổi(hover)*/
+
+    /*opacity là thuộc tính css khi đổi,
+     0.2s là thời gian khi đổi opacity từ 1 -> 0.8 khi hover
+    ease là hiệu ứng
+    */
+    transition: opacity 0.2s ease;
+}
+
+/*thay đổi hiệu ứng khi đưa chuột lên nút*/
+.btn:hover {
+    opacity: 0.8;
+}
+
+/*Tạo các kích cỡ các nút*/
+
+.btn--size--s {
+    padding: 8px 32px;
+}
+
+.btn--size--l {
+    padding: 16px 56px;
+
+}
+
+/*css cho class btn có class btn đứng ngay cạnh nhau*/
+.btn + .btn {
+    margin-left: 16px;
+}
+
+.btn--success {
+    background-color: green;
+}
+
+.btn--warn {
+    background-color: #e0c207;
+}
+
+.btn--error {
+    background-color: #f44336;
+}
+
+/*Hiển thị nút k bấm được*/
+.btn--disabled {
+    opacity: 0.5 !important;
+    /*Đổi biểu tượng chuột khi hover lên thành mũi tên,
+     để người dùng biết k bấm được*/
+    cursor: default;
+}
