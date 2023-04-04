@@ -1,0 +1,72 @@
+/*Nơi chứa các thành phần css cấu hình chung*/
+
+/*Tạo ra các biến   */
+:root {
+    --white-color: #ffffff;
+    --black-color: #000;
+    /*Màu chữ #333 k đen hoàn toàn, độ tương phản thấp hơn màu đen
+    Khi đọc chữ trên website đỡ bị mỏi mắt
+    */
+    --text-color: #333;
+}
+
+/* * css apply tất cả các phần tử element được nhúng file base.css này*/
+* {
+    /*    Kế thừa css từ thẻ chứa nó*/
+    box-sizing: inherit;
+}
+
+html {
+    /*    Mặc định trình duyệt font-size là 100%(16px)*/
+    /*Trong trường hợp font-size = 62.5% thì 1rem = 10px*/
+    font-size: 62.5%;
+    /*Chiều cao dòng chữ*/
+    line-height: 1.6rem;
+    /*
+    Nếu font roboto ở link cdn k dùng được thì mặc định sẽ dùng sanserif
+    sans-serif là chủng chữ k có chân*/
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/*p {*/
+/*    font-size: 1rem;*/
+/*    !*    ở đây nếu muốn là 12x thì chỉ cần là 1.2 rem là được*!*/
+/*    !*    ở đây nếu muốn là 16x thì chỉ cần là 1.6 rem là được*!*/
+/*}*/
+
+.grid {
+    /*ở màn hình lớn hơn 1200px thì kích thước
+     lớn nhất của thẻ có thuộc tính này là 1200px*/
+    width: 1200px;
+    /*Nếu màn hình nhỏ hơn 1200px thì giảm kích thước grid bằng kích thước màn hình */
+    max-width: 100%;
+    /*Tự động căn giữa khi nằm trong 1 khối khác*/
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    /*    Dùng khi k muốn width = 1200px*/
+    width: 100%;
+}
+
+.grid_row {
+    /*Những items nằm trong class này
+     sẽ nằm trên cùng 1 trục main axis hàng ngang
+    */
+    display: flex;
+    /*Những items nằm trong class này có đội dài lớn hơn thẻ cha sẽ xuống hàng*/
+    flex-wrap: wrap;
+}
+
+/*Animation*/
+/*Tạo ra các chuyển động theo khung hình*/
+@keyframes fadeIn {
+    /*Tạo hiệu ứng hiện lên từ từ*/
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

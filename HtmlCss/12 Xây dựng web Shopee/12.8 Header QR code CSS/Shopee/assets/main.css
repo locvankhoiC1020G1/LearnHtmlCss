@@ -1,0 +1,170 @@
+/*Nơi css thành phần riêng*/
+/*Tính chất display: block giúp đặt được chiều ngang dọc(width, height) trong CSS
+Những thẻ tính chất block kế thừa lại chiều ngang của thẻ chứa nó
+thẻ html k kế thùa từ thẻ nào, nên sẽ kế thừa lại chiều ngang của trình duyệt
+*/
+.header {
+    height: 120px;
+    /*Chuyển màu từ trên xuống dưới, bắt đầu ở góc 0 độ*/
+    background-image: linear-gradient(0, #fe6433, #f53e2d);
+}
+
+.header__navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__navbar-list {
+    /*Thẻ ul mặc định có giá trị padding-left: 40px
+    margin-top:10px
+    margin-bottom:10px
+    cần sửa lại
+    */
+    padding-left: 0;
+    /*Bỏ dấu tròn trước các thẻ li*/
+    list-style: none;
+    margin-top: 4px;
+}
+
+.header__navbar-item {
+    /*Cho các item tách nhau ra*/
+    margin: 0 8px;
+    /*Thêm thuộc tính relative để sudo element after chỉnh vị trí dấu gạch*/
+    position: relative;
+    min-height: 26px;
+}
+
+/*header QR code*/
+
+.header__navbar-item--has-qr:hover .header__qr {
+    /*Những thuộc tính css viết trong này sẽ được áp dụng
+    vào header__qr trong trường hợp
+    header__navbar-item--has-qr được hover,
+    .header__qr là class con của thẻ header__navbar-item--has-qr
+    */
+    display: block;
+}
+
+/*CSS cho thẻ li*/
+.header__navbar-item,
+.header__navbar-item-link {
+    /*Cho các thẻ li nằm trên cùng 1 hàng*/
+    display: inline-block;
+    font-size: 1.4rem;
+    color: var(--white-color);
+    /*Bỏ gạch chân dưới chữ*/
+    text-decoration: none;
+    /*cho độ dày chữ mỏng đi*/
+    font-weight: 300;
+}
+
+/*Căn giữa icon với chữ Kết nối*/
+.header__navbar-item,
+.header__navbar-item-link,
+.header__navbar-icon-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+/*Sửa lại các link trên header khi được hover*/
+.header__navbar-icon-link:hover,
+.header__navbar-item:hover,
+.header__navbar-item-link:hover {
+    color: rgba(255, 255, 255, 0.7);
+    /*Sửa lai con trỏ chuột thành hình bàn tay*/
+    cursor: pointer;
+}
+
+.header__navbar-item--strong {
+    font-weight: 400;
+}
+
+/*Thêm sudo element để tạo ra dấu gạch*/
+.header__navbar-item--separate::after {
+    position: absolute;
+    content: "";
+    display: block;
+    /*Có thể dùng width height để tạo ra dấu gạch*/
+    /*width: 1px;*/
+    height: 14px;
+    /*background-color: #FB9086;*/
+    border-left: 1px solid #FB9086;
+    right: -9px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header__navbar-icon-link {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.header__navbar-icon {
+    font-size: 1.8rem;
+    margin: 0 4px;
+}
+
+.header__navbar-tile--no-pointer {
+    cursor: text;
+    color: var(--white-color);
+}
+
+/*Header QR*/
+
+.header__qr {
+    position: absolute;
+    left: 0;
+    /*cách 100% so với thẻ chứa(ở đây là chiều cao của thẻ li)*/
+    top: 100%;
+    width: 186px;
+    background: var(--white-color);
+    padding: 8px;
+    border-radius: 2px;
+    display: none;
+    /*fadeIn là tên animation,
+     ease-in là kiểu hiện lên
+    0.3s là thời gian thực thi animation
+    */
+    animation: fadeIn ease-in 0.3s;
+}
+
+/*Tạo thành cầu nối giữa header__qr và
+ thẻ header__navbar-item--has-qr khi chuột đưa ra quá thẻ li */
+.header__qr::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 18%;
+    left: 0;
+    display: block;
+
+}
+
+.header__qr-img {
+    width: 100%;
+}
+
+.header__qr-apps {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Chọn phần tử đầu tiên: cách 1*/
+/*.header__qr-link:first-child {*/
+
+/*}*/
+/*Cách 2:*/
+.header__qr-link:nth-child(1) {
+    /*Nên hạn chế fix cứng cho 2 thẻ như này
+    code sẽ bị cứng nhắc, nếu sau này có 3-4 items thì phải sửa lại
+    */
+    margin-left: 11px;
+}
+
+.header__qr-link:nth-child(2) {
+    margin-left: 11px;
+}
+
+.header__qr-downloading-img {
+    height: 15px;
+}
