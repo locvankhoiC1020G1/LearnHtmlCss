@@ -91,8 +91,9 @@ html {
 }
 
 .modal__body {
-    width: 300px;
-    height: 300px;
+    border: 2px solid;
+    /*width: 300px;*/
+    /*height: 300px;*/
     /*background: #000;*/
     margin: auto;
     /*Nổi lên trên lớp overlay*/

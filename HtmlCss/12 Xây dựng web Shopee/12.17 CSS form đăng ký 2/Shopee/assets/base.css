@@ -10,6 +10,7 @@
     Khi đọc chữ trên website đỡ bị mỏi mắt
     */
     --text-color: #333;
+    --border-color: #dbdbdb;
 
 }
 
@@ -91,8 +92,9 @@ html {
 }
 
 .modal__body {
-    width: 300px;
-    height: 300px;
+    border: 2px solid;
+    /*width: 300px;*/
+    /*height: 300px;*/
     /*background: #000;*/
     margin: auto;
     /*Nổi lên trên lớp overlay*/
@@ -102,4 +104,43 @@ html {
     */
     z-index: 1;
     border-radius: 5px;
+}
+
+/*Vì nút dùng lại nhiều nên đặt class riêng*/
+/*Button style*/
+
+.btn {
+    /*Đặt chiều rộng tối thiểu*/
+    min-width: 142px;
+    height: 38px;
+    text-decoration: none;
+    border-radius: 2px;
+    border: none;
+    font-size: 1.4rem;
+    /*căn giữa chữ k dùng flex*/
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/*Css cho 1 element có cả 3 class*/
+.btn.btn--primary {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+/*Vô hiệu hóa nút*/
+.btn.btn--disable {
+    cursor: default;
+    color: #949494;
+    background: #c3c3c3;
+}
+
+.btn.btn---size-s {
+    height: 32px;
 }

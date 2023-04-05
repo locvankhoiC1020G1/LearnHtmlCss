@@ -1,0 +1,397 @@
+/*Nơi css thành phần riêng*/
+/*Tính chất display: block giúp đặt được chiều ngang dọc(width, height) trong CSS
+Những thẻ tính chất block kế thừa lại chiều ngang của thẻ chứa nó
+thẻ html k kế thùa từ thẻ nào, nên sẽ kế thừa lại chiều ngang của trình duyệt
+*/
+.header {
+    height: 120px;
+    /*Chuyển màu từ trên xuống dưới, bắt đầu ở góc 0 độ*/
+    background-image: linear-gradient(0, #fe6433, #f53e2d);
+}
+
+.header__navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__navbar-list {
+    /*Thẻ ul mặc định có giá trị padding-left: 40px
+    margin-top:10px
+    margin-bottom:10px
+    cần sửa lại
+    */
+    padding-left: 0;
+    /*Bỏ dấu tròn trước các thẻ li*/
+    list-style: none;
+    margin-top: 4px;
+}
+
+.header__navbar-item {
+    /*Cho các item tách nhau ra*/
+    margin: 0 8px;
+    /*Thêm thuộc tính relative để sudo element after chỉnh vị trí dấu gạch*/
+    position: relative;
+    min-height: 26px;
+}
+
+/*header QR code*/
+
+.header__navbar-item--has-qr:hover .header__qr {
+    /*Những thuộc tính css viết trong này sẽ được áp dụng
+    vào header__qr trong trường hợp
+    header__navbar-item--has-qr được hover,
+    .header__qr là class con của thẻ header__navbar-item--has-qr
+    */
+    display: block;
+}
+
+.header__navbar-item--has-notify:hover .header__notify {
+    display: block;
+}
+
+/*CSS cho thẻ li*/
+.header__navbar-item,
+.header__navbar-item-link {
+    /*Cho các thẻ li nằm trên cùng 1 hàng*/
+    display: inline-block;
+    font-size: 1.4rem;
+    color: var(--white-color);
+    /*Bỏ gạch chân dưới chữ*/
+    text-decoration: none;
+    /*cho độ dày chữ mỏng đi*/
+    font-weight: 300;
+}
+
+/*Căn giữa icon với chữ Kết nối*/
+.header__navbar-item,
+.header__navbar-item-link,
+.header__navbar-icon-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+/*Sửa lại các link trên header khi được hover*/
+.header__navbar-icon-link:hover,
+.header__navbar-item:hover,
+.header__navbar-item-link:hover {
+    color: rgba(255, 255, 255, 0.7);
+    /*Sửa lai con trỏ chuột thành hình bàn tay*/
+    cursor: pointer;
+}
+
+.header__navbar-item--strong {
+    font-weight: 400;
+}
+
+/*Thêm sudo element để tạo ra dấu gạch*/
+.header__navbar-item--separate::after {
+    position: absolute;
+    content: "";
+    display: block;
+    /*Có thể dùng width height để tạo ra dấu gạch*/
+    /*width: 1px;*/
+    height: 14px;
+    /*background-color: #FB9086;*/
+    border-left: 1px solid #FB9086;
+    right: -9px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header__navbar-icon-link {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.header__navbar-icon {
+    font-size: 1.8rem;
+    margin: 0 4px;
+}
+
+.header__navbar-tile--no-pointer {
+    cursor: text;
+    color: var(--white-color);
+}
+
+/*Header QR*/
+
+.header__qr {
+    position: absolute;
+    left: 0;
+    /*cách 100% so với thẻ chứa(ở đây là chiều cao của thẻ li)*/
+    top: 100%;
+    width: 186px;
+    background: var(--white-color);
+    padding: 8px;
+    border-radius: 2px;
+    display: none;
+    /*fadeIn là tên animation,
+     ease-in là kiểu hiện lên
+    0.3s là thời gian thực thi animation
+    */
+    animation: fadeIn ease-in 0.3s;
+}
+
+/*Tạo thành cầu nối giữa header__qr và
+ thẻ header__navbar-item--has-qr khi chuột đưa ra quá thẻ li */
+.header__qr::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 18%;
+    left: 0;
+    display: block;
+
+}
+
+.header__qr-img {
+    width: 100%;
+}
+
+.header__qr-apps {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Chọn phần tử đầu tiên: cách 1*/
+/*.header__qr-link:first-child {*/
+
+/*}*/
+/*Cách 2:*/
+.header__qr-link:nth-child(1) {
+    /*Nên hạn chế fix cứng cho 2 thẻ như này
+    code sẽ bị cứng nhắc, nếu sau này có 3-4 items thì phải sửa lại
+    */
+    margin-left: 11px;
+}
+
+.header__qr-link:nth-child(2) {
+    margin-left: 11px;
+}
+
+.header__qr-downloading-img {
+    height: 15px;
+}
+
+/*Header Notification*/
+.header__notify {
+    position: absolute;
+    top: 118%;
+    right: 0;
+    width: 404px;
+    background: var(--white-color);
+    border: 1px solid #d3d3d3;
+    cursor: default;
+    /*Thu phóng bắt đầu từ bên trên phía bên phải*/
+    transform-origin: calc(100% - 20px) top;
+    /*Thu phóng này đang bắt đầu từ tâm của thẻ hiện ra,
+     cần phải đổi lại cho bắt đầu transform từ góc phải, 90 độ*/
+    animation: headerNotifyGrowth ease-in 0.3s;
+    /*Trình duyệt web sẽ tối ưu chuyển động
+     keyframes cho 2 cái opacity, transform*/
+    will-change: opacity, transform;
+    display: none;
+}
+
+/*Tạo tam giác hiển thị hội thoại bên dưới thông báo*/
+.header__notify::before {
+    content: "";
+    /*Nếu tạo thành tam giác cân thì để 1 chiều 20px
+    20px là độ dài của 1 cạnh hình vuông
+    */
+    /*border: 20px solid;*/
+    /*Để tam giác trở nên nhọn hơn:*/
+    border-width: 20px 30px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    right: 12px;
+    top: -30px
+}
+
+/*Tạo cầu nối để người dùng
+ khi đưa chuột xuống dưới nút thông báo k bị mất
+ nội dung của notify
+ */
+.header__notify::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -16px;
+    width: 90px;
+    height: 20px;
+    /*background: red;*/
+}
+
+@keyframes headerNotifyGrowth {
+    /*Cho bảng thông báo transform(phóng lớn lên)*/
+    from {
+        /*transform độ lớn lên bắt đầu từ 0*/
+        transform: scale(0);
+    }
+    to {
+        /*transform trở về kích thước ban đầu*/
+        transform: scale(1);
+    }
+}
+
+.header__notify-header {
+    height: 40px;
+    background: var(--white-color);
+
+}
+
+.header__notify-header h3 {
+    color: #999;
+    margin: 0 0 0 12px;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 40px;
+    /*Ngăn k cho người dùng copy text*/
+    user-select: none;
+    /*-webkit là prefix dành cho các trình duyệt chrome,
+    edge, cốc cốc, để trình duyệt dùng được
+    */
+    -webkit-user-select: none;
+    /*moz là của mozilla*/
+    -moz-user-select: none;
+    /*-ms là của internet explore*/
+    -ms-user-select: none;
+}
+
+.header__notify-list {
+    padding-left: 0;
+    background: var(--white-color);
+}
+
+.header__notify-item {
+    display: flex;
+}
+
+.header__notify-item:hover {
+    background-color: #f1f1f1f1;
+}
+
+/*Đổi màu hiển thị những item chưa xem*/
+.header__notify-item--viewed {
+    background: rgba(238, 75, 43, 0.4);
+}
+
+.header__notify-link {
+    padding: 12px;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+
+
+}
+
+.header__notify-img {
+    width: 48px;
+    /*để ảnh k bị méo*/
+    object-fit: contain;
+}
+
+.header__notify-info {
+    margin-left: 12px;
+}
+
+.header__notify-name {
+    /**/
+    display: block;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    line-height: 1.8rem;
+    font-weight: 400;
+}
+
+.header__notify-description {
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: #756F6E;
+    margin-top: 4px;
+}
+
+.header__notify-footer {
+    display: flex;
+}
+
+.header__notify-footer-btn {
+    text-decoration: none;
+    color: var(--text-color);
+    width: 100%;
+    padding: 8px 0px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+/*AUTHEN modal*/
+.auth-form {
+    width: 500px;
+}
+
+.auth-form__container {
+    padding: 0 32px;
+}
+
+.auth-form__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.auth-form__heading {
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.auth-form__switch-btn {
+    font-size: 1.6rem;
+    color: red;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.auth-form__form {
+}
+
+.auth-form__input {
+    width: 100%;
+    height: 40px;
+    margin-top: 16px;
+    padding: 0 12px;
+    font-size: 1.4rem;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    /*Tắt outline của input*/
+    outline: none;
+}
+
+/*đổi màu viền khi bấm vào nút input*/
+.auth-form__input:focus {
+    border-color: #777;
+}
+
+.auth-form__asign {
+    margin-top: 18px;
+}
+
+.auth-form__policy-text {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.auth-form__text-link {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.auth-form__controls {
+    margin-top: 80px;
+}
