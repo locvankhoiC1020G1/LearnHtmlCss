@@ -4,9 +4,10 @@ Những thẻ tính chất block kế thừa lại chiều ngang của thẻ ch�
 thẻ html k kế thùa từ thẻ nào, nên sẽ kế thừa lại chiều ngang của trình duyệt
 */
 .header {
-    height: 120px;
+    height: var(--header-height);
     /*Chuyển màu từ trên xuống dưới, bắt đầu ở góc 0 độ*/
     background-image: linear-gradient(0, #fe6433, #f53e2d);
+
 }
 
 .header__navbar {
@@ -23,7 +24,7 @@ thẻ html k kế thùa từ thẻ nào, nên sẽ kế thừa lại chiều nga
     padding-left: 0;
     /*Bỏ dấu tròn trước các thẻ li*/
     list-style: none;
-    margin-top: 4px;
+    margin: 4px 0 0 0;
 }
 
 .header__navbar-item {
@@ -369,7 +370,7 @@ thẻ html k kế thùa từ thẻ nào, nên sẽ kế thừa lại chiều nga
     padding: 0 12px;
     font-size: 1.4rem;
     border: 1px solid var(--border-color);
-    border-radius: 3px;
+    border-radius: 2px;
     /*Tắt outline của input*/
     outline: none;
 }
@@ -458,4 +459,230 @@ thẻ html k kế thùa từ thẻ nào, nên sẽ kế thừa lại chiều nga
 
 .auth-form__help-forgot {
     color: var(--primary-color);
+}
+
+.header-with-search {
+    height: var(--header-with-search-height);
+    display: flex;
+    align-items: center;
+    /*Cho logo ngang với div bên trên*/
+    margin: 0 8px;
+}
+
+.header__logo {
+    width: 200px;
+}
+
+.header__logo-img {
+    width: 150px;
+    color: var(--white-color);
+}
+
+.header__search {
+    height: 40px;
+    background: var(--white-color);
+    flex: 1;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.header__cart {
+    width: 150px;
+    text-align: center;
+}
+
+.header__cart-icon {
+    color: var(--white-color);
+    font-size: 2.4rem;
+    margin-top: 6px;
+}
+
+.header__search-input-wrap {
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+
+.header__search-input {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    padding: 0 16px;
+    border-radius: 2px;
+}
+
+.header__search-select {
+    border-left: 1px solid black;
+    padding-left: 16px;
+    position: relative;
+    cursor: pointer;
+}
+
+.header__search-select-label {
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.header__search-select-icon {
+    font-size: 1.4rem;
+    color: black;
+    margin: 0 16px 0 8px;
+    position: relative;
+    top: 1px;
+}
+
+.header__search-btn {
+    background: var(--primary-color);
+    border: none;
+    height: 34px;
+    width: 60px;
+    border-radius: 2px;
+    margin-right: 3px;
+    outline: none;
+}
+
+.header__search-btn:hover {
+    background: red;
+    cursor: pointer;
+}
+
+.header__search-btn-icon {
+    font-size: 1.2rem;
+    color: var(--white-color);
+
+}
+
+.header__search-select:hover .header__search-option {
+    display: block;
+}
+
+.header__search-option {
+    position: absolute;
+    right: 0;
+    /*cách top = kích thước của thẻ chứa*/
+    top: 100%;
+    width: 130px;
+    list-style: none;
+    /*giá trị đầu tiên là obset hướng bóng đổ theo chiều X,
+    nếu âm thì sẽ chạy lên, dương chạy xuống
+     */
+    /*giá trị thứ 2 là obset hướng bóng đổ theo chiều y
+    âm thì chạy sang trái, dương chạy sang phải
+    */
+    /*giá trị thứ 3 là blur(độ mờ)*/
+    box-shadow: 0 1px 2px red;
+    padding-left: 0;
+    display: none;
+    animation: fadeIn ease-in 0.2s;
+
+}
+
+/*Tạo cầu nối   */
+.header__search-option:after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 10px;
+    /*background: red;*/
+    top: -10px;
+    left: 0;
+}
+
+.header__search-option-item {
+    background: var(--white-color);
+    border-radius: 2px;
+    padding: 8px 8px;
+}
+
+/*Chỉ tạo viền của thẻ li đầu tiên và cuối cùng*/
+.header__search-option-item:first-child {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.header__search-option-item:last-child {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.header__search-option-item:hover {
+    background-color: #fafafa;
+    cursor: pointer;
+
+}
+
+.header__search-option-item span {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-left: 8px;
+}
+
+.header__search-option-item i {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-left: 12px;
+    display: none;
+}
+
+.header__search-option-item--active i {
+    display: inline-block;
+}
+/*Click vào thì đổi thuộc tính .header__Search-history*/
+.header__search-input:focus ~ .header__search-history {
+display: block;
+}
+
+/*Search  History*/
+.header__search-history {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    width: calc(100% - 16px);
+    background: var(--white-color);
+    border-radius: 2px;
+    box-shadow: 0 1px 5px rgb(182, 182, 182);
+    display: none;
+}
+
+.header__search-history-heading {
+    margin: 6px 12px;
+    font-size: 1.4rem;
+    color: #999;
+    font-weight: 400;
+
+}
+
+.header__search-history-list {
+    /*Bỏ padding mặc định của ul*/
+    padding-left: 0;
+    list-style: none;
+    margin: 6px 0;
+}
+
+.header__search-history-item {
+    height: 38px;
+    padding: 0 12px;
+}
+
+.header__search-history-item:last-child {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+
+}
+
+.header__search-history-item:hover {
+    background: #fafafa;
+}
+
+.header__search-history-item a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    line-height: 38px;
 }

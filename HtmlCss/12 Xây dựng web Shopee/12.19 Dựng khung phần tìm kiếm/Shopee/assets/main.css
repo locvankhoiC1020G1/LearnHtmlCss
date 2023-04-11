@@ -4,9 +4,10 @@ Những thẻ tính chất block kế thừa lại chiều ngang của thẻ ch�
 thẻ html k kế thùa từ thẻ nào, nên sẽ kế thừa lại chiều ngang của trình duyệt
 */
 .header {
-    height: 120px;
+    height: var(--header-height);
     /*Chuyển màu từ trên xuống dưới, bắt đầu ở góc 0 độ*/
     background-image: linear-gradient(0, #fe6433, #f53e2d);
+
 }
 
 .header__navbar {
@@ -23,7 +24,7 @@ thẻ html k kế thùa từ thẻ nào, nên sẽ kế thừa lại chiều nga
     padding-left: 0;
     /*Bỏ dấu tròn trước các thẻ li*/
     list-style: none;
-    margin-top: 4px;
+    margin: 4px 0 0 0;
 }
 
 .header__navbar-item {
@@ -458,4 +459,37 @@ thẻ html k kế thùa từ thẻ nào, nên sẽ kế thừa lại chiều nga
 
 .auth-form__help-forgot {
     color: var(--primary-color);
+}
+
+.header-with-search {
+    height: var(--header-with-search-height);
+    display: flex;
+    align-items: center;
+}
+
+.header__logo {
+    width: 200px;
+}
+
+.header__logo-img {
+    width: 150px;
+    color: var(--white-color);
+}
+
+.header__search {
+    height: 40px;
+    background: var(--white-color);
+    flex: 1;
+    border-radius: 2px;
+}
+
+.header__cart {
+    width: 150px;
+    text-align: center;
+}
+
+.header__cart-icon {
+    color: var(--white-color);
+    font-size: 2.4rem;
+    margin-top: 6px;
 }
