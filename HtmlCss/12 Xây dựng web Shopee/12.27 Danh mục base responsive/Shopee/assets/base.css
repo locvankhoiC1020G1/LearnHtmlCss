@@ -40,7 +40,7 @@ html {
 /*    !*    ở đây nếu muốn là 12x thì chỉ cần là 1.2 rem là được*!*/
 /*    !*    ở đây nếu muốn là 16x thì chỉ cần là 1.6 rem là được*!*/
 /*}*/
-
+/*Responsive*/
 .grid {
     /*ở màn hình lớn hơn 1200px thì kích thước
      lớn nhất của thẻ có thuộc tính này là 1200px*/
@@ -56,13 +56,31 @@ html {
     width: 100%;
 }
 
-.grid_row {
+.grid__row {
     /*Những items nằm trong class này
      sẽ nằm trên cùng 1 trục main axis hàng ngang
     */
     display: flex;
     /*Những items nằm trong class này có đội dài lớn hơn thẻ cha sẽ xuống hàng*/
     flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.grid__column {
+
+}
+
+.grid__column-2 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 16.667%;
+}
+
+.grid__column-10 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 83.334%;
 }
 
 /*Animation*/
