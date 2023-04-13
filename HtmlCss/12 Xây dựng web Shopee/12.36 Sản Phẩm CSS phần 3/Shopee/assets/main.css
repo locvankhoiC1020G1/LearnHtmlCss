@@ -3,6 +3,7 @@
 Những thẻ tính chất block kế thừa lại chiều ngang của thẻ chứa nó
 thẻ html k kế thùa từ thẻ nào, nên sẽ kế thừa lại chiều ngang của trình duyệt
 */
+/*Viết quá nhiều thẻ div sẽ bị nặng website*/
 .header {
     height: var(--header-height);
     /*Chuyển màu từ trên xuống dưới, bắt đầu ở góc 0 độ*/
@@ -1125,4 +1126,154 @@ thẻ html k kế thùa từ thẻ nào, nên sẽ kế thừa lại chiều nga
     margin: auto;
     font-size: 1.4rem;
     color: #555;
+}
+
+/*Product item*/
+.home-product-item {
+    background: var(--white-color);
+    margin-top: 10px;
+}
+
+.home-product-item__img {
+    /*Nếu muốn xét ảnh vuông (chiều cao bằng chiều ngang)
+    chiều cao của ảnh lại bằng chiều ngang của thẻ chứa nó
+    */
+    /*con số 100% là chiều ngang của thẻ chứa nó*/
+    padding-top: 100%;
+    background-repeat: no-repeat;
+    /*Kích thước ảnh sẽ co lại tránh ảnh quá lớn*/
+    background-size: contain;
+    /*để focus vào trọng tâm của bức ảnh*/
+    background-position: center;
+    /*    So sánh img vs background-image*/
+
+    /*    so sánh thẻ img và background-img
+    Nếu cho
+    */
+}
+
+.home-product-item__name {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--text-color);
+    /*Xử lý ... hiển thị 2 dòng*/
+    line-height: 1.8rem;
+    height: 3.6rem;
+    overflow: hidden;
+    /*padding: 0 10px;*/
+    /*Mặc định các thẻ h có khoảng margin nhất định*/
+    margin: 10px 10px 6px;
+    display: block;
+    /*Nếu trình duyệt k hỗ trợ chạy -webkit-box thì sẽ chạy display:block*/
+    display: -webkit-box;
+    /*Hướng của dòng chữ theo chiều nào,
+    ở đây có 2 dòng thì là chiều dọc(chạy từ trên xuống dưới)
+    */
+    -webkit-box-orient: vertical;
+    /*giới hạn số dòng, nếu đặt là số 1 thì dấu ... sẽ hiển thị ở dòng 1*/
+    -webkit-line-clamp: 2;
+    /*css hiển thị ... với 1 dòng*/
+    /*white-space: nowrap;*/
+    /*text-overflow: ellipsis;*/
+}
+
+.home-product-item__price {
+    display: flex;
+    align-items: baseline;
+    /*Nếu giá quá to thì sẽ xuống dòng*/
+    flex-wrap: wrap;
+}
+
+.home-product-item__price-old {
+    margin-left: 10px;
+    font-size: 1.4rem;
+    color: #666666;
+    /*Gạch ngang chữ*/
+    text-decoration: line-through;
+}
+
+.home-product-item__price-current {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-left: 10px;
+}
+
+.home-product-item__action {
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 10px 0;
+}
+
+.home-product-item__like {
+    font-size: 1.4rem;
+}
+
+/*Vì mặc định trong fontawesome có thuộc tính inline-block có độ ưu tiên cao
+Cần thêm thẻ i vào selector để ghi đè
+*/
+i.home-product-item__like-icon-fill {
+    color: var(--primary-color);
+    display: none;
+}
+
+.home-product-item__like--liked .home-product-item__like-icon-fill {
+    display: inline-block;
+}
+
+.home-product-item__like--liked .home-product-item__like-icon-empty {
+    display: none;
+}
+
+.home-product-item__rating {
+    font-size: 1rem;
+    /*Phóng to thu nhỏ*/
+    /*zoom: 0.8;*/
+    transform: scale(0.8);
+    /*Thu nhỏ và dính sát lề phải*/
+    transform-origin: right;
+    color: #cccccc;
+    margin: -1px 0 0 auto;
+}
+
+.home-product-item__star--gold {
+    color: var(--star-gold-color);
+}
+
+.home-product-item__sold {
+    margin-left: 6px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.home-product-item__origin {
+    display: flex;
+    margin: 3px 10px 0;
+    color: #595959;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.home-product-item__brand {
+    /*Nhiều cách để cho các items cách xa nhau*/
+    /*margin-right: auto;*/
+}
+
+.home-product-item__origin-name {
+    margin-left: auto;
+}
+
+.home-product-item__favourite {
+
+}
+
+.home-product-item__sale-off {
+
+}
+
+.home-product-item__sale-off-percent {
+
+}
+
+.home-product-item__sale-off-label {
+
 }
