@@ -1,0 +1,297 @@
+/*Nơi chứa các thành phần css cấu hình chung*/
+
+/*Tạo ra các biến   */
+:root {
+    --primary-color: #EE4D2D;
+    /*--primary-color-rgba: rgb(238, 75, 43);*/
+    --white-color: #ffffff;
+    --star-gold-color: E0C207FF;
+    --black-color: #000;
+    /*Màu chữ #333 k đen hoàn toàn, độ tương phản thấp hơn màu đen
+    Khi đọc chữ trên website đỡ bị mỏi mắt
+    */
+    --text-color: #333;
+    --border-color: #dbdbdb;
+    --header-height: 120px;
+    --navbar-heigt: 34px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-heigt))
+
+}
+
+/* * css apply tất cả các phần tử element được nhúng file base.css này*/
+* {
+    /*    Kế thừa css từ thẻ chứa nó*/
+    box-sizing: inherit;
+}
+
+html {
+    /*    Mặc định trình duyệt font-size là 100%(16px)*/
+    /*Trong trường hợp font-size = 62.5% thì 1rem = 10px*/
+    font-size: 62.5%;
+    /*Chiều cao dòng chữ*/
+    line-height: 1.6rem;
+    /*
+    Nếu font roboto ở link cdn k dùng được thì mặc định sẽ dùng sanserif
+    sans-serif là chủng chữ k có chân*/
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/*p {*/
+/*    font-size: 1rem;*/
+/*    !*    ở đây nếu muốn là 12x thì chỉ cần là 1.2 rem là được*!*/
+/*    !*    ở đây nếu muốn là 16x thì chỉ cần là 1.6 rem là được*!*/
+/*}*/
+/*Responsive*/
+.grid {
+    /*ở màn hình lớn hơn 1200px thì kích thước
+     lớn nhất của thẻ có thuộc tính này là 1200px*/
+    width: 1200px;
+    /*Nếu màn hình nhỏ hơn 1200px thì giảm kích thước grid bằng kích thước màn hình */
+    max-width: 100%;
+    /*Tự động căn giữa khi nằm trong 1 khối khác*/
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    /*    Dùng khi k muốn width = 1200px*/
+    width: 100%;
+}
+
+.grid__row {
+    /*Những items nằm trong class này
+     sẽ nằm trên cùng 1 trục main axis hàng ngang
+    */
+    display: flex;
+    /*Những items nằm trong class này có đội dài lớn hơn thẻ cha sẽ xuống hàng*/
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.grid__column {
+
+}
+
+.grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.667%;
+}
+
+.grid__column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
+.grid__column-10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.334%;
+}
+
+/*Animation*/
+/*Tạo ra các chuyển động theo khung hình*/
+@keyframes fadeIn {
+    /*Tạo hiệu ứng hiện lên từ từ*/
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes growth {
+    /*Tạo ra 2 biến local ở modal__body*/
+    from {
+        /*Thay đổi kích cỡ phóng lên*/
+        transform: scale(var(--growth-from));
+    }
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn ease-in 0.1s;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.modal__body {
+    --growth-from: 0.7;
+    --growth-to: 1;
+    border: 2px solid;
+    /*width: 300px;*/
+    /*height: 300px;*/
+    /*background: #000;*/
+    margin: auto;
+    /*Nổi lên trên lớp overlay*/
+    position: relative;
+    /*Mặc định z-index = 0, ngang với lớp overlay.
+    Cần cho z-index lớn hơn để nổi lên
+    */
+    z-index: 1;
+    border-radius: 5px;
+    /*linear là animation đều
+
+    */
+    animation: growth linear 0.1s;
+}
+
+/*Vì nút dùng lại nhiều nên đặt class riêng*/
+/*Button style*/
+
+.btn {
+    /*Đặt chiều rộng tối thiểu*/
+    min-width: 124px;
+    height: 38px;
+    text-decoration: none;
+    border-radius: 2px;
+    border: none;
+    font-size: 1.4rem;
+    /*căn giữa chữ k dùng flex*/
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.6rem;
+}
+
+.btn.btn--normal:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+/*Css cho 1 element có cả 3 class*/
+.btn.btn--primary {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+/*Vô hiệu hóa nút*/
+.btn.btn--disable {
+    cursor: default;
+    color: #949494;
+    background: #c3c3c3;
+}
+
+.btn.btn---size-s {
+    padding: 0 8px;
+    height: 32px;
+    line-height: 32px;
+}
+
+.auth-form__socials-tile {
+    /*margin: 0 36px;*/
+}
+
+/*Selection*/
+.select-input {
+    position: relative;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 2px;
+    background: var(--white-color);
+    min-width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+.select-input:hover .select-input__list {
+    display: block;
+}
+
+.select-input__label {
+    font-size: 1.4rem;
+}
+
+.select-input__list {
+    position: absolute;
+    /*Lấy chiều dài bằng thẻ cha(thẻ chứa nó)*/
+    left: 0;
+    right: 0;
+    top: 25px;
+    border-radius: 2px;
+    background: var(--white-color);
+    list-style: none;
+    padding: 8px 16px;
+    display: none;
+}
+
+.select-input__item {
+
+}
+
+.select-input__link {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    padding: 4px;
+}
+
+.select-input__link:hover {
+    color: var(--primary-color);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.pagination-item {
+
+    margin: 0 12px;
+}
+
+.pagination-item--active .pagination-item__link {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+.pagination-item--active .pagination-item__link:hover {
+    background: red;
+}
+
+.pagination-item__link {
+    /*sử dụng biến local*/
+    --height: 30px;
+    font-weight: 300;
+    display: block;
+    text-align: center;
+    line-height: var(--height);
+    text-decoration: none;
+    background: #cccccc;
+    font-size: 2rem;
+    color: #939393;
+    /*nên để min-width vì sau này nếu số to thì  kích cỡ cũng tự tăng lên*/
+    min-width: 40px;
+    height: var(--height);
+    border-radius: 2px;
+
+}
+
+.pagination-item__icon {
+
+}
